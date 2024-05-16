@@ -1,1 +1,7 @@
-/dataset
+Dataset/
+informer_checkpoints/
+results/
+exp/__pycache__
+models/__pycache__
+utils/__pycache__
+data/__pycache__
