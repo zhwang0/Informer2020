@@ -325,10 +325,15 @@ class Dataset_DeepED(Dataset):
         data_x = df_raw[f'x_{self.flag}'] # (batch, 40, 12, 158) 
         data_y = df_raw[f'y_{self.flag}'] # (batch, 40, 7)
         
-        data_y = np.repeat(data_y[:, :, np.newaxis, :], 12, axis=2) # (batch, 40, 12, 7)
+        data_x = data_x.reshape(-1, data_x.shape[2], data_x.shape[3]) # (batch*40, 12, 158)
+        data_y = data_y.reshape(-1, data_y.shape[2])
+        data_y = np.expand_dims(data_y, axis=1) # (batch*40, 1, 7)
+        data_y = np.concatenate([data_x[:, 0:1, 136:143], data_y], 1) # (batch*40, 2, 7)
+        data_x = data_x[:, :, :136] # (batch*40, 12, 136)
         
-        data_x = data_x.reshape(-1, data_y.shape[1]*data_y.shape[2], data_x.shape[-1]) # (batch, 480, 158)
-        data_y = data_y.reshape(-1, data_y.shape[1]*data_y.shape[2], data_y.shape[-1]) # (batch, 480, 7)
+        # data_y = np.repeat(data_y[:, :, np.newaxis, :], 12, axis=2) # (batch, 40, 12, 7)
+        # data_x = data_x.reshape(-1, data_y.shape[1]*data_y.shape[2], data_x.shape[-1]) # (batch, 480, 158)
+        # data_y = data_y.reshape(-1, data_y.shape[1]*data_y.shape[2], data_y.shape[-1]) # (batch, 480, 7)
         
         self.data_x = data_x
         self.data_y = data_y
@@ -338,7 +343,7 @@ class Dataset_DeepED(Dataset):
         seq_x = self.data_x[index]
         seq_y = self.data_y[index]
 
-        return seq_x, seq_y, 0, 0
+        return seq_x, seq_y
     
     def __len__(self):
         return self.data_x.shape[0]

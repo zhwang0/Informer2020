@@ -1,6 +1,6 @@
 from data.data_loader import Dataset_ETT_hour, Dataset_ETT_minute, Dataset_Custom, Dataset_Pred, Dataset_DeepED
 from exp.exp_basic import Exp_Basic
-from models.model import Informer, InformerStack
+from models.model import Informer, InformerStack, Informer_noT
 
 from utils.tools import EarlyStopping, adjust_learning_rate
 from utils.metrics import metric
@@ -26,10 +26,11 @@ class Exp_Informer_DeepED(Exp_Basic):
     def _build_model(self):
         model_dict = {
             'informer':Informer,
+            'informer_noT': Informer_noT,
             'informerstack':InformerStack,
         }
-        if self.args.model=='informer' or self.args.model=='informerstack':
-            e_layers = self.args.e_layers if self.args.model=='informer' else self.args.s_layers
+        if self.args.model=='informer' or self.args.model=='informer_noT' or self.args.model=='informerstack':
+            e_layers = self.args.e_layers if self.args.model=='informer' or self.args.model=='informer_noT' else self.args.s_layers
             model = model_dict[self.args.model](
                 self.args.enc_in,
                 self.args.dec_in, 
@@ -123,11 +124,6 @@ class Exp_Informer_DeepED(Exp_Basic):
         total_loss = np.average(total_loss)
         self.model.train()
         return total_loss
-
-    # custom function
-    def get_train_data(self):
-        train_data, train_loader = self._get_data(flag = 'train')
-        return train_data, train_loader
     
     def train(self, setting):
         train_data, train_loader = self._get_data(flag = 'train')
@@ -154,12 +150,12 @@ class Exp_Informer_DeepED(Exp_Basic):
             
             self.model.train()
             epoch_time = time.time()
-            for i, (batch_x,batch_y,batch_x_mark,batch_y_mark) in enumerate(train_loader):
+            for i, (batch_x,batch_y) in enumerate(train_loader):
                 iter_count += 1
                 
                 model_optim.zero_grad()
                 pred, true = self._process_one_batch(
-                    train_data, batch_x, batch_y, batch_x_mark, batch_y_mark)
+                    train_data, batch_x, batch_y)
                 loss = criterion(pred, true)
                 train_loss.append(loss.item())
                 
@@ -181,12 +177,11 @@ class Exp_Informer_DeepED(Exp_Basic):
 
             print("Epoch: {} cost time: {}".format(epoch+1, time.time()-epoch_time))
             train_loss = np.average(train_loss)
-            vali_loss = self.vali(vali_data, vali_loader, criterion)
             test_loss = self.vali(test_data, test_loader, criterion)
 
-            print("Epoch: {0}, Steps: {1} | Train Loss: {2:.7f} Vali Loss: {3:.7f} Test Loss: {4:.7f}".format(
-                epoch + 1, train_steps, train_loss, vali_loss, test_loss))
-            early_stopping(vali_loss, self.model, path)
+            print("Epoch: {0}, Steps: {1} | Train Loss: {2:.7f} Test Loss: {4:.7f}".format(
+                epoch + 1, train_steps, train_loss, test_loss))
+            early_stopping(test_loss, self.model, path)
             if early_stopping.early_stop:
                 print("Early stopping")
                 break
@@ -262,12 +257,9 @@ class Exp_Informer_DeepED(Exp_Basic):
         
         return
 
-    def _process_one_batch(self, dataset_object, batch_x, batch_y, batch_x_mark, batch_y_mark):
+    def _process_one_batch(self, dataset_object, batch_x, batch_y):
         batch_x = batch_x.float().to(self.device)
         batch_y = batch_y.float()
-
-        batch_x_mark = batch_x_mark.float().to(self.device)
-        batch_y_mark = batch_y_mark.float().to(self.device)
 
         # decoder input
         if self.args.padding==0:
@@ -279,16 +271,15 @@ class Exp_Informer_DeepED(Exp_Basic):
         if self.args.use_amp:
             with torch.cuda.amp.autocast():
                 if self.args.output_attention:
-                    outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)[0]
+                    outputs = self.model(batch_x, dec_inp)[0]
                 else:
-                    outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
+                    outputs = self.model(batch_x, dec_inp)
         else:
             if self.args.output_attention:
-                outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)[0]
+                outputs = self.model(batch_x, dec_inp)[0]
             else:
-                outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
-        if self.args.inverse:
-            outputs = dataset_object.inverse_transform(outputs)
+                outputs = self.model(batch_x, dec_inp)
+
         f_dim = -1 if self.args.features=='MS' else 0
         batch_y = batch_y[:,-self.args.pred_len:,f_dim:].to(self.device)
 
