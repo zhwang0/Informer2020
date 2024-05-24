@@ -303,7 +303,9 @@ class Dataset_DeepED(Dataset):
             self.label_len = size[1]
             self.pred_len = size[2]
         # init
-        assert flag in ['train', 'test', 'val']
+        assert flag in ['train', 'test', 'val', 'pred']
+        if flag == 'pred':
+            flag = 'test'
         self.flag = flag
         type_map = {'train':0, 'val':1, 'test':2}
         self.set_type = type_map[flag]
@@ -325,11 +327,23 @@ class Dataset_DeepED(Dataset):
         data_x = df_raw[f'x_{self.flag}'] # (batch, 40, 12, 158) 
         data_y = df_raw[f'y_{self.flag}'] # (batch, 40, 7)
         
+        # # --- only use 7 output features ---
+        # data_x = data_x.reshape(-1, data_x.shape[2], data_x.shape[3]) # (batch*40, 12, 158)
+        # data_y = data_y.reshape(-1, data_y.shape[2])
+        # data_y = np.expand_dims(data_y, axis=1) # (batch*40, 1, 7)
+        # data_y = np.concatenate([data_x[:, 0:1, 136:143], data_y], 1) # (batch*40, 2, 7)
+        # data_x = data_x[:, :, :136] # (batch*40, 12, 136)
+        
+        # --- use age triplets ---
         data_x = data_x.reshape(-1, data_x.shape[2], data_x.shape[3]) # (batch*40, 12, 158)
         data_y = data_y.reshape(-1, data_y.shape[2])
         data_y = np.expand_dims(data_y, axis=1) # (batch*40, 1, 7)
-        data_y = np.concatenate([data_x[:, 0:1, 136:143], data_y], 1) # (batch*40, 2, 7)
+        data_y1 = data_x[:, 0:1, 136:] # (batch*40, 1, 22)
+        # (batch*40, 1, 7) --> (batch*40, 1, 22)
+        data_y2 = np.concatenate([data_y, np.zeros((data_y.shape[0], 1, 15))], 2) 
+        data_y = np.concatenate([data_y1, data_y2], 1) # (batch*40, 2, 22)
         data_x = data_x[:, :, :136] # (batch*40, 12, 136)
+        
         
         # data_y = np.repeat(data_y[:, :, np.newaxis, :], 12, axis=2) # (batch, 40, 12, 7)
         # data_x = data_x.reshape(-1, data_y.shape[1]*data_y.shape[2], data_x.shape[-1]) # (batch, 480, 158)

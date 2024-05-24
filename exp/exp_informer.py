@@ -228,12 +228,13 @@ class Exp_Informer_DeepED(Exp_Basic):
         return
 
     def predict(self, setting, load=False):
-        pred_data, pred_loader = self._get_data(flag='test')
+        pred_data, pred_loader = self._get_data(flag='pred')
         
         if load:
             path = os.path.join(self.args.checkpoints, setting)
             best_model_path = path+'/'+'checkpoint.pth'
             self.model.load_state_dict(torch.load(best_model_path))
+            print('load model from:', best_model_path)
 
         self.model.eval()
         
@@ -281,6 +282,10 @@ class Exp_Informer_DeepED(Exp_Basic):
 
         f_dim = -1 if self.args.features=='MS' else 0
         batch_y = batch_y[:,-self.args.pred_len:,f_dim:].to(self.device)
+        
+        # only output target diminsions
+        batch_y = batch_y[:,:,f_dim:7]
+        outputs = outputs[:,:,f_dim:7]
 
         return outputs, batch_y
 
