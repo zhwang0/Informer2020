@@ -59,6 +59,7 @@ class Dataset_ETT_hour(Dataset):
             df_data = df_raw[[self.target]]
 
         if self.scale:
+            # only use mean/std from training to scale the entire dataset
             train_data = df_data[border1s[0]:border2s[0]]
             self.scaler.fit(train_data.values)
             data = self.scaler.transform(df_data.values)
@@ -75,6 +76,8 @@ class Dataset_ETT_hour(Dataset):
         else:
             self.data_y = data[border1:border2]
         self.data_stamp = data_stamp
+        
+        # return same length and data for data_x: (N, C), data_y: (N, C)
     
     def __getitem__(self, index):
         s_begin = index
@@ -280,6 +283,65 @@ class Dataset_Custom(Dataset):
     
     def __len__(self):
         return len(self.data_x) - self.seq_len- self.pred_len + 1
+
+    def inverse_transform(self, data):
+        return self.scaler.inverse_transform(data)
+
+
+class Dataset_DeepED(Dataset):
+    def __init__(self, root_path, flag='train', size=None, 
+                 features='S', data_path='data_train.npz', 
+                 target='OT', scale=True, inverse=False, timeenc=0, freq='h', cols=None):
+        # size [seq_len, label_len, pred_len]
+        # info
+        if size == None:
+            self.seq_len = 24*4*4
+            self.label_len = 24*4
+            self.pred_len = 24*4
+        else:
+            self.seq_len = size[0]
+            self.label_len = size[1]
+            self.pred_len = size[2]
+        # init
+        assert flag in ['train', 'test', 'val']
+        self.flag = flag
+        type_map = {'train':0, 'val':1, 'test':2}
+        self.set_type = type_map[flag]
+        
+        self.features = features
+        self.target = target
+        self.scale = scale
+        self.inverse = inverse
+        self.timeenc = timeenc
+        self.freq = freq
+        self.cols=cols
+        self.root_path = root_path
+        self.data_path = f'data_{flag}.npz'
+        self.__read_data__()
+
+    def __read_data__(self):
+        df_raw = np.load(os.path.join(self.root_path, 
+                                      self.data_path))
+        data_x = df_raw[f'x_{self.flag}'] # (batch, 40, 12, 158) 
+        data_y = df_raw[f'y_{self.flag}'] # (batch, 40, 7)
+        
+        data_y = np.repeat(data_y[:, :, np.newaxis, :], 12, axis=2) # (batch, 40, 12, 7)
+        
+        data_x = data_x.reshape(-1, data_y.shape[1]*data_y.shape[2], data_x.shape[-1]) # (batch, 480, 158)
+        data_y = data_y.reshape(-1, data_y.shape[1]*data_y.shape[2], data_y.shape[-1]) # (batch, 480, 7)
+        
+        self.data_x = data_x
+        self.data_y = data_y
+        
+    
+    def __getitem__(self, index):
+        seq_x = self.data_x[index]
+        seq_y = self.data_y[index]
+
+        return seq_x, seq_y, 0, 0
+    
+    def __len__(self):
+        return self.data_x.shape[0]
 
     def inverse_transform(self, data):
         return self.scaler.inverse_transform(data)
