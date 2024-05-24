@@ -80,7 +80,6 @@ class Exp_Informer_DeepED(Exp_Basic):
             shuffle_flag = False; drop_last = True; batch_size = args.batch_size; freq=args.freq
         elif flag=='pred':
             shuffle_flag = False; drop_last = False; batch_size = 1; freq=args.detail_freq
-            Data = Dataset_Pred
         else:
             shuffle_flag = True; drop_last = True; batch_size = args.batch_size; freq=args.freq
         data_set = Data(
@@ -116,9 +115,9 @@ class Exp_Informer_DeepED(Exp_Basic):
     def vali(self, vali_data, vali_loader, criterion):
         self.model.eval()
         total_loss = []
-        for i, (batch_x,batch_y,batch_x_mark,batch_y_mark) in enumerate(vali_loader):
+        for i, (batch_x,batch_y) in enumerate(vali_loader):
             pred, true = self._process_one_batch(
-                vali_data, batch_x, batch_y, batch_x_mark, batch_y_mark)
+                vali_data, batch_x, batch_y)
             loss = criterion(pred.detach().cpu(), true.detach().cpu())
             total_loss.append(loss)
         total_loss = np.average(total_loss)
@@ -179,7 +178,7 @@ class Exp_Informer_DeepED(Exp_Basic):
             train_loss = np.average(train_loss)
             test_loss = self.vali(test_data, test_loader, criterion)
 
-            print("Epoch: {0}, Steps: {1} | Train Loss: {2:.7f} Test Loss: {4:.7f}".format(
+            print("Epoch: {0}, Steps: {1} | Train Loss: {2:.7f} Test Loss: {3:.7f}".format(
                 epoch + 1, train_steps, train_loss, test_loss))
             early_stopping(test_loss, self.model, path)
             if early_stopping.early_stop:
@@ -201,9 +200,9 @@ class Exp_Informer_DeepED(Exp_Basic):
         preds = []
         trues = []
         
-        for i, (batch_x,batch_y,batch_x_mark,batch_y_mark) in enumerate(test_loader):
+        for i, (batch_x,batch_y) in enumerate(test_loader):
             pred, true = self._process_one_batch(
-                test_data, batch_x, batch_y, batch_x_mark, batch_y_mark)
+                test_data, batch_x, batch_y)
             preds.append(pred.detach().cpu().numpy())
             trues.append(true.detach().cpu().numpy())
 
@@ -229,7 +228,7 @@ class Exp_Informer_DeepED(Exp_Basic):
         return
 
     def predict(self, setting, load=False):
-        pred_data, pred_loader = self._get_data(flag='pred')
+        pred_data, pred_loader = self._get_data(flag='test')
         
         if load:
             path = os.path.join(self.args.checkpoints, setting)
@@ -240,9 +239,9 @@ class Exp_Informer_DeepED(Exp_Basic):
         
         preds = []
         
-        for i, (batch_x,batch_y,batch_x_mark,batch_y_mark) in enumerate(pred_loader):
+        for i, (batch_x,batch_y) in enumerate(pred_loader):
             pred, true = self._process_one_batch(
-                pred_data, batch_x, batch_y, batch_x_mark, batch_y_mark)
+                pred_data, batch_x, batch_y)
             preds.append(pred.detach().cpu().numpy())
 
         preds = np.array(preds)
