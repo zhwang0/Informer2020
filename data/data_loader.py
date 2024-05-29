@@ -106,9 +106,8 @@ class Dataset_DeepED(Dataset):
     def __getitem__(self, index):
         seq_x = self.data_x[index]
         seq_y = self.data_y[index]
-        seq_y1 = self.data_y[index]
     
-        return seq_x, seq_y, seq_y1
+        return seq_x, seq_y
     
     def __len__(self):
         return self.data_x.shape[0]
