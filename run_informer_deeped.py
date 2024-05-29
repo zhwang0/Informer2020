@@ -3,9 +3,13 @@
 
 # ## DeepED Informer
 
+# In[17]:
 
 
-# In[2]:
+get_ipython().system('jupyter nbconvert --to script run_informer_deeped.ipynb')
+
+
+# In[1]:
 
 
 import torch
@@ -22,12 +26,13 @@ from utils.tools import dotdict
 from exp.exp_informer import Exp_Informer, Exp_Informer_DeepED
 
 
-# In[3]:
+# In[2]:
 
 
 args = dotdict()
 
 args.model = 'informer_noT' # model of experiment, options: [informer, informerstack, informerlight(TBD)]
+args.model = 'transformer_noT'
 
 args.data = 'deeped' # data
 args.root_path = os.path.join('Dataset', 'DeepED_dataset') # root path of data file
@@ -56,7 +61,7 @@ args.e_layers = 2 # num of encoder layers
 args.d_layers = 1 # num of decoder layers
 args.d_ff = 2048 # dimension of fcn in model
 args.dropout = 0.05 # dropout
-args.attn = 'full' # attention used in encoder, options:[prob, full]
+args.attn = 'prob' # attention used in encoder, options:[prob, full]
 args.embed = 'timeF' # time features encoding, options:[timeF, fixed, learned]
 args.activation = 'gelu' # activation
 args.distil = True # whether to use distilling in encoder
@@ -84,7 +89,7 @@ args.use_multi_gpu = False
 args.devices = '0'
 
 
-# In[4]:
+# In[3]:
 
 
 args.use_gpu = True if torch.cuda.is_available() and args.use_gpu else False
@@ -100,13 +105,13 @@ args.freq = args.freq[-1:]
 print(args.detrail_freq, args.freq)
 
 
-# In[5]:
+# In[4]:
 
 
 Exp = Exp_Informer_DeepED
 
 
-# In[6]:
+# In[5]:
 
 
 ii = 0 # experiment index

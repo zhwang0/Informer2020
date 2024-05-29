@@ -1,6 +1,6 @@
 from data.data_loader import Dataset_ETT_hour, Dataset_ETT_minute, Dataset_Custom, Dataset_Pred, Dataset_DeepED
 from exp.exp_basic import Exp_Basic
-from models.model import Informer, InformerStack, Informer_noT
+from models.model import Informer, InformerStack, Informer_noT, Transformer_noT
 
 from utils.tools import EarlyStopping, adjust_learning_rate
 from utils.metrics import metric
@@ -25,12 +25,13 @@ class Exp_Informer_DeepED(Exp_Basic):
     
     def _build_model(self):
         model_dict = {
-            'informer':Informer,
             'informer_noT': Informer_noT,
+            'transformer_noT': Transformer_noT,
+            'informer':Informer,
             'informerstack':InformerStack,
         }
-        if self.args.model=='informer' or self.args.model=='informer_noT' or self.args.model=='informerstack':
-            e_layers = self.args.e_layers if self.args.model=='informer' or self.args.model=='informer_noT' else self.args.s_layers
+        if self.args.model=='informer' or self.args.model=='informer_noT' or self.args.model=='transformer_noT' or self.args.model=='informerstack':
+            e_layers = self.args.e_layers if self.args.model=='informer' or self.args.model=='informer_noT' or self.args.model=='transformer_noT' else self.args.s_layers
             model = model_dict[self.args.model](
                 self.args.enc_in,
                 self.args.dec_in, 
