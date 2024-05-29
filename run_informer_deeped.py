@@ -3,13 +3,13 @@
 
 # ## DeepED Informer
 
-# In[17]:
+# In[1]:
 
 
 get_ipython().system('jupyter nbconvert --to script run_informer_deeped.ipynb')
 
 
-# In[1]:
+# In[2]:
 
 
 import torch
@@ -26,13 +26,13 @@ from utils.tools import dotdict
 from exp.exp_informer import Exp_Informer, Exp_Informer_DeepED
 
 
-# In[2]:
+# In[3]:
 
 
 args = dotdict()
 
-args.model = 'informer_noT' # model of experiment, options: [informer, informerstack, informerlight(TBD)]
-args.model = 'transformer_noT'
+args.model = 'informer_noT' # model of experiment, options: [informer_noT, transformer_noT]
+# args.model = 'transformer_noT' 
 
 args.data = 'deeped' # data
 args.root_path = os.path.join('Dataset', 'DeepED_dataset') # root path of data file
@@ -89,7 +89,7 @@ args.use_multi_gpu = False
 args.devices = '0'
 
 
-# In[3]:
+# In[4]:
 
 
 args.use_gpu = True if torch.cuda.is_available() and args.use_gpu else False
@@ -105,13 +105,13 @@ args.freq = args.freq[-1:]
 print(args.detrail_freq, args.freq)
 
 
-# In[4]:
+# In[5]:
 
 
 Exp = Exp_Informer_DeepED
 
 
-# In[5]:
+# In[6]:
 
 
 ii = 0 # experiment index
@@ -146,7 +146,7 @@ exp = Exp(args)
 #   break
 
 
-# In[8]:
+# In[7]:
 
 
 # train
@@ -183,7 +183,7 @@ exp.test(setting)
 
 # ### Prediction
 
-# In[11]:
+# In[8]:
 
 
 #-- resutl output path
@@ -479,13 +479,13 @@ dir_out = './results/' + setting +'/'
 
 _ = eval(exp, 
   os.path.join(args.root_path, 'res_train4_test8_v02.npz'), 
-  dir_out+'test_true', 
+  dir_out+'test_pred', 
   age_tri, data_stat, [age_start_idx,age_end_idx], 
   isPred2Input=True, isTrain=False, isOutput=True, isDup=True, y_lim=[0,3.5])
 
 _ = eval(exp, 
   os.path.join(args.root_path, 'res_train4_test8_v02.npz'), 
-  dir_out+'test_pred', 
+  dir_out+'test_true', 
   age_tri, data_stat, [age_start_idx,age_end_idx], 
   isPred2Input=False, isTrain=False, isOutput=True, isDup=True, y_lim=[0,3.5])
 
