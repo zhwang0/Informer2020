@@ -85,6 +85,9 @@ class Exp_Informer_DeepED(Exp_Basic):
         data_set = Data(
             root_path=args.root_path,
             data_path=args.data_path,
+            stat_path = args.stat_path,
+            asi = args.asi,
+            aei = args.aei,
             flag=flag,
             size=[args.seq_len, args.label_len, args.pred_len],
             features=args.features,

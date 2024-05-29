@@ -15,6 +15,115 @@ warnings.filterwarnings('ignore')
 
 class Dataset_DeepED(Dataset):
     def __init__(self, root_path, flag='train', size=None, 
+                 features='S', data_path='data_train.npz', stat_path='stat.npz',
+                 asi=0, aei=15, val_ratio=0.1,
+                 target='OT', scale=True, inverse=False, timeenc=0, freq='h', cols=None):
+        # size [seq_len, label_len, pred_len]
+        # info
+        if size == None:
+            self.seq_len = 24*4*4
+            self.label_len = 24*4
+            self.pred_len = 24*4
+        else:
+            self.seq_len = size[0]
+            self.label_len = size[1]
+            self.pred_len = size[2]
+        # init
+        assert flag in ['train', 'test', 'val', 'pred']
+        if flag == 'pred':
+            flag = 'test'
+        self.flag = flag
+        type_map = {'train':0, 'val':1, 'test':2}
+        self.set_type = type_map[flag]
+
+        self.root_path = root_path
+        self.data_path = data_path
+        self.stat_path = stat_path
+        self.asi = asi
+        self.aei = aei
+        self.val_ratio = val_ratio
+         
+        self.features = features
+        self.target = target
+        self.scale = scale
+        self.inverse = inverse
+        self.timeenc = timeenc
+        self.freq = freq
+        self.cols=cols
+        
+        self.__read_data__()
+
+    def __read_data__(self):
+        stat_raw = np.load(os.path.join(self.root_path, self.stat_path))
+        self.x_mean = stat_raw['x_mean']
+        self.x_std = stat_raw['x_std']
+        self.y_mean = stat_raw['y_mean']
+        self.y_std = stat_raw['y_std']
+        
+        data_raw = np.load(os.path.join(self.root_path, self.data_path))
+        # x = (N, 40, 12, 136)
+        # y = (age, N, 41, 12, 7)
+        if self.set_type == 2: 
+            data_x = data_raw[f'x_test'] 
+            data_y = data_raw[f'y_test'] 
+        else: 
+            data_x = data_raw[f'x_train']
+            data_y = data_raw[f'y_train']
+        
+        # only select last month as target 
+        data_y = data_y[self.asi:self.aei, :, :, -1] # (age, N, 41, 7)
+        
+        # prepare inital and target pair 
+        data_y = np.lib.stride_tricks.sliding_window_view(data_y, (2,), axis=2) # (age, N, 40, 7, 2)
+        data_y = np.transpose(data_y, (1,0,2,4,3)) # (N, age, 40, 2, 7)
+        
+        # dup x for matching ages 
+        data_x = np.repeat(data_x[:, np.newaxis, :, :, :], self.aei-self.asi, axis=1) # (N, age, 40, 12, 136)
+            
+        # normalize data
+        data_x = self.__norm_data__(data_x, self.x_mean, self.x_std)
+        data_y = self.__norm_data__(data_y, self.y_mean, self.y_std)
+        
+        # split train and val
+        if self.set_type != 2:
+            idx = np.arange(data_x.shape[0])
+            np.random.shuffle(idx)
+            idx_val = idx[:int(len(idx)*self.val_ratio)]
+            idx_train = idx[int(len(idx)*self.val_ratio):]
+            if self.set_type == 0:
+                data_x = data_x[idx_train]
+                data_y = data_y[idx_train]
+            else:
+                data_x = data_x[idx_val]
+                data_y = data_y[idx_val]
+        
+        
+        self.data_x = data_x.reshape(-1, data_x.shape[3], data_x.shape[4])
+        self.data_y = data_y.reshape(-1, data_y.shape[3], data_y.shape[4]) 
+        print(f'{self.flag} data size x={self.data_x.shape}, y={self.data_y.shape}')
+        
+    
+    def __getitem__(self, index):
+        seq_x = self.data_x[index]
+        seq_y = self.data_y[index]
+
+        return seq_x, seq_y
+    
+    def __len__(self):
+        return self.data_x.shape[0]
+    
+    def __norm_data__(self, data, mean, std):
+        return (data-mean)/(std+1e-10)
+    
+    def __inverse_norm_data__(self, data, mean, std):
+        return data*(std+1e-10) + mean
+
+    def inverse_transform(self, data):
+        return self.scaler.inverse_transform(data)
+
+
+class Dataset_DeepED_backup(Dataset):
+    def __init__(self, root_path, flag='train', size=None, 
                  features='S', data_path='data_train.npz', 
                  target='OT', scale=True, inverse=False, timeenc=0, freq='h', cols=None):
         # size [seq_len, label_len, pred_len]
