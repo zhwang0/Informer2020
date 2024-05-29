@@ -74,8 +74,8 @@ class Dataset_DeepED(Dataset):
         data_y = data_y[self.asi:self.aei, :, :, -1] # (age, N, 41, 7)
         
         # prepare inital and target pair 
-        data_y = np.lib.stride_tricks.sliding_window_view(data_y, (2,), axis=2) # (age, N, 40, 7, 2)
-        data_y = np.transpose(data_y, (1,0,2,4,3)) # (N, age, 40, 2, 7)
+        data_y = self.__sliding_window__(data_y, 2, 1, 2) # (age, N, 40, 2, 7)
+        data_y = np.transpose(data_y, (1,0,2,3,4)) # (N, age, 40, 2, 7)
         
         # dup x for matching ages 
         data_x = np.repeat(data_x[:, np.newaxis, :, :, :], self.aei-self.asi, axis=1) # (N, age, 40, 12, 136)
@@ -102,15 +102,34 @@ class Dataset_DeepED(Dataset):
         self.data_y = data_y.reshape(-1, data_y.shape[3], data_y.shape[4]) 
         print(f'{self.flag} data size x={self.data_x.shape}, y={self.data_y.shape}')
         
-    
+
     def __getitem__(self, index):
         seq_x = self.data_x[index]
         seq_y = self.data_y[index]
-
-        return seq_x, seq_y
+        seq_y1 = self.data_y[index]
+    
+        return seq_x, seq_y, seq_y1
     
     def __len__(self):
         return self.data_x.shape[0]
+    
+    def __sliding_window__(self, arr, window_size, stride, axis):
+        # Ensure the axis is positive and within the valid range
+        axis = axis if axis >= 0 else arr.ndim + axis
+        if axis < 0 or axis >= arr.ndim:
+            raise ValueError("Axis out of bounds")
+
+        # Calculate the shape and strides for the sliding window
+        new_shape = list(arr.shape)
+        new_shape[axis] = (arr.shape[axis] - window_size) // stride + 1
+        new_shape.insert(axis + 1, window_size)
+        
+        new_strides = list(arr.strides)
+        new_strides.insert(axis + 1, new_strides[axis])
+        new_strides[axis] = new_strides[axis] * stride
+
+        # Create the sliding window view
+        return np.lib.stride_tricks.as_strided(arr, shape=tuple(new_shape), strides=tuple(new_strides))
     
     def __norm_data__(self, data, mean, std):
         return (data-mean)/(std+1e-10)

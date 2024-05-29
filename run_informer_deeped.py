@@ -3,11 +3,6 @@
 
 # ## DeepED Informer
 
-# In[1]:
-
-
-get_ipython().system('jupyter nbconvert --to script run_informer_deeped.ipynb')
-
 
 # In[2]:
 
