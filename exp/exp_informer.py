@@ -1,6 +1,6 @@
 from data.data_loader import Dataset_ETT_hour, Dataset_ETT_minute, Dataset_Custom, Dataset_Pred, Dataset_DeepED
 from exp.exp_basic import Exp_Basic
-from models.model import Informer, InformerStack, Informer_noT, Transformer_noT
+from models.model import Informer, InformerStack, Informer_noT, Transformer_noT, LSTNet#, LSTM, LSTMa
 
 from utils.tools import EarlyStopping, adjust_learning_rate
 from utils.metrics import metric
@@ -27,6 +27,9 @@ class Exp_Informer_DeepED(Exp_Basic):
         model_dict = {
             'informer_noT': Informer_noT,
             'transformer_noT': Transformer_noT,
+            'LSTNet': LSTNet,
+            # 'LSTM': LSTM,
+            # 'LSTMa': LSTMa,
             'informer':Informer,
             'informerstack':InformerStack,
         }
@@ -55,6 +58,9 @@ class Exp_Informer_DeepED(Exp_Basic):
                 self.args.mix,
                 self.device
             ).float()
+        elif self.args.model=='LSTNet':
+            model = model_dict[self.args.model](self.args).float()
+            
         
         if self.args.use_multi_gpu and self.args.use_gpu:
             model = nn.DataParallel(model, device_ids=self.args.device_ids)
@@ -89,6 +95,8 @@ class Exp_Informer_DeepED(Exp_Basic):
             stat_path = args.stat_path,
             asi = args.asi,
             aei = args.aei,
+            add_noise = args.add_noise,
+            noise_std = args.noise_std,
             flag=flag,
             size=[args.seq_len, args.label_len, args.pred_len],
             features=args.features,

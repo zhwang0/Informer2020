@@ -16,7 +16,7 @@ warnings.filterwarnings('ignore')
 class Dataset_DeepED(Dataset):
     def __init__(self, root_path, flag='train', size=None, 
                  features='S', data_path='data_train.npz', stat_path='stat.npz',
-                 asi=0, aei=15, val_ratio=0.1,
+                 asi=0, aei=15, val_ratio=0.1, add_noise=False, noise_std=1e-4,
                  target='OT', scale=True, inverse=False, timeenc=0, freq='h', cols=None):
         # size [seq_len, label_len, pred_len]
         # info
@@ -42,6 +42,8 @@ class Dataset_DeepED(Dataset):
         self.asi = asi
         self.aei = aei
         self.val_ratio = val_ratio
+        self.add_noise = add_noise
+        self.noise_std = noise_std
          
         self.features = features
         self.target = target
@@ -76,6 +78,10 @@ class Dataset_DeepED(Dataset):
         # prepare inital and target pair 
         data_y = self.__sliding_window__(data_y, 2, 1, 2) # (age, N, 40, 2, 7)
         data_y = np.transpose(data_y, (1,0,2,3,4)) # (N, age, 40, 2, 7)
+        
+        # add random-walk noise to target
+        if self.add_noise:
+            data_y =  self.__add_random_walk_noise_to_batch__(data_y, self.noise_std)
         
         # dup x for matching ages 
         data_x = np.repeat(data_x[:, np.newaxis, :, :, :], self.aei-self.asi, axis=1) # (N, age, 40, 12, 136)
@@ -129,6 +135,31 @@ class Dataset_DeepED(Dataset):
 
         # Create the sliding window view
         return np.lib.stride_tricks.as_strided(arr, shape=tuple(new_shape), strides=tuple(new_strides))
+    
+    def __generate_random_walk_noise__(self, shape, std):
+        random_steps = np.random.normal(loc=0.0, scale=std, size=shape)
+        random_walk_noise = np.cumsum(random_steps, axis=2)  # Axis 2 corresponds to the "40" dimension
+        return random_walk_noise
+    
+    # Function to add random walk noise to the specified feature channels
+    def __add_random_walk_noise_to_batch__(self, batch, std):
+        N, age, years, channels, features = batch.shape
+
+        # Generate random walk noise for the specified channels
+        noise_shape = (N, age, years, features)
+        random_walk_noise = self.__generate_random_walk_noise__(noise_shape, std)
+
+        # Create a zero tensor with the same shape as the batch
+        noise_tensor = np.zeros_like(batch)
+        
+        # Add the random walk noise to the [:, :, :, 0, :] slice
+        noise_tensor[:, :, :, 0, :] = random_walk_noise
+        
+        # Add the noise tensor to the batch
+        batch_with_noise = batch + noise_tensor
+        
+        return batch_with_noise
+    
     
     def __norm_data__(self, data, mean, std):
         return (data-mean)/(std+1e-10)
