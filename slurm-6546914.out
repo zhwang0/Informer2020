@@ -1,0 +1,855 @@
+Loading cuda/gcc/9.4.0/zen2/11.6.2
+  Loading requirement: gcc/9.4.0
+Loading pytorch/python/3.8.12/gcc/9.4.0/zen2/1.11.0
+  Loading requirement: matplotlib/3.4.3/zen2 python/3.8.12/zen2
+/cvmfs/hpcsw.umd.edu/spack-software/2022.06.15/linux-rhel8-zen2/gcc-9.4.0/python-3.8.12-m4izbfupod72qgxj4xogsl2vmivojcew/lib/python3.8/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.24.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+None h
+Use GPU: cuda:0
+>>>>>>>start training : informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train data size x=(1821600, 12, 136), y=(1821600, 2, 7)
+train 1821600
+val data size x=(202200, 12, 136), y=(202200, 2, 7)
+val 202200
+test data size x=(511200, 12, 136), y=(511200, 2, 7)
+test 511200
+	iters: 100, epoch: 1 | loss: 0.0408357
+	speed: 0.1433s/iter; left time: 13041.3058s
+	iters: 200, epoch: 1 | loss: 0.0395191
+	speed: 0.0309s/iter; left time: 2803.9846s
+	iters: 300, epoch: 1 | loss: 0.0281163
+	speed: 0.0302s/iter; left time: 2740.0419s
+	iters: 400, epoch: 1 | loss: 0.0261487
+	speed: 0.0307s/iter; left time: 2781.5702s
+	iters: 500, epoch: 1 | loss: 0.0233424
+	speed: 0.0298s/iter; left time: 2703.3327s
+	iters: 600, epoch: 1 | loss: 0.0196187
+	speed: 0.0305s/iter; left time: 2762.9579s
+	iters: 700, epoch: 1 | loss: 0.0202107
+	speed: 0.0301s/iter; left time: 2716.7286s
+	iters: 800, epoch: 1 | loss: 0.0165362
+	speed: 0.0305s/iter; left time: 2752.6294s
+	iters: 900, epoch: 1 | loss: 0.0181082
+	speed: 0.0304s/iter; left time: 2743.9148s
+	iters: 1000, epoch: 1 | loss: 0.0137938
+	speed: 0.0310s/iter; left time: 2789.6998s
+	iters: 1100, epoch: 1 | loss: 0.0157479
+	speed: 0.0303s/iter; left time: 2722.6485s
+	iters: 1200, epoch: 1 | loss: 0.0114143
+	speed: 0.0308s/iter; left time: 2765.2058s
+	iters: 1300, epoch: 1 | loss: 0.0157393
+	speed: 0.0302s/iter; left time: 2709.5539s
+	iters: 1400, epoch: 1 | loss: 0.0148925
+	speed: 0.0308s/iter; left time: 2759.0558s
+	iters: 1500, epoch: 1 | loss: 0.0111244
+	speed: 0.0302s/iter; left time: 2704.8462s
+Epoch: 1 cost time: 57.59072184562683
+Epoch: 1, Steps: 1518 | Train Loss: 0.0263582 Vali Loss: 0.0102833 Test Loss: 0.0117500
+Validation loss decreased (inf --> 0.010283).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.0139358
+	speed: 0.1515s/iter; left time: 13555.5517s
+	iters: 200, epoch: 2 | loss: 0.0084700
+	speed: 0.0314s/iter; left time: 2808.0794s
+	iters: 300, epoch: 2 | loss: 0.0107477
+	speed: 0.0307s/iter; left time: 2740.8510s
+	iters: 400, epoch: 2 | loss: 0.0121376
+	speed: 0.0310s/iter; left time: 2762.7662s
+	iters: 500, epoch: 2 | loss: 0.0096732
+	speed: 0.0302s/iter; left time: 2690.7940s
+	iters: 600, epoch: 2 | loss: 0.0107294
+	speed: 0.0306s/iter; left time: 2725.9136s
+	iters: 700, epoch: 2 | loss: 0.0116242
+	speed: 0.0301s/iter; left time: 2676.5185s
+	iters: 800, epoch: 2 | loss: 0.0117758
+	speed: 0.0314s/iter; left time: 2782.8254s
+	iters: 900, epoch: 2 | loss: 0.0094004
+	speed: 0.0304s/iter; left time: 2694.6734s
+	iters: 1000, epoch: 2 | loss: 0.0089208
+	speed: 0.0299s/iter; left time: 2652.4417s
+	iters: 1100, epoch: 2 | loss: 0.0109407
+	speed: 0.0298s/iter; left time: 2637.5487s
+	iters: 1200, epoch: 2 | loss: 0.0081255
+	speed: 0.0303s/iter; left time: 2674.3060s
+	iters: 1300, epoch: 2 | loss: 0.0082825
+	speed: 0.0298s/iter; left time: 2632.2326s
+	iters: 1400, epoch: 2 | loss: 0.0087907
+	speed: 0.0299s/iter; left time: 2633.8042s
+	iters: 1500, epoch: 2 | loss: 0.0092456
+	speed: 0.0304s/iter; left time: 2680.1646s
+Epoch: 2 cost time: 46.36159896850586
+Epoch: 2, Steps: 1518 | Train Loss: 0.0102798 Vali Loss: 0.0085349 Test Loss: 0.0104547
+Validation loss decreased (0.010283 --> 0.008535).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.0091371
+	speed: 0.1501s/iter; left time: 13196.9152s
+	iters: 200, epoch: 3 | loss: 0.0073787
+	speed: 0.0301s/iter; left time: 2641.8751s
+	iters: 300, epoch: 3 | loss: 0.0074347
+	speed: 0.0295s/iter; left time: 2590.6361s
+	iters: 400, epoch: 3 | loss: 0.0070710
+	speed: 0.0302s/iter; left time: 2642.9785s
+	iters: 500, epoch: 3 | loss: 0.0071437
+	speed: 0.0296s/iter; left time: 2593.7376s
+	iters: 600, epoch: 3 | loss: 0.0068612
+	speed: 0.0303s/iter; left time: 2652.0054s
+	iters: 700, epoch: 3 | loss: 0.0066518
+	speed: 0.0296s/iter; left time: 2586.8137s
+	iters: 800, epoch: 3 | loss: 0.0082760
+	speed: 0.0301s/iter; left time: 2628.3041s
+	iters: 900, epoch: 3 | loss: 0.0082519
+	speed: 0.0306s/iter; left time: 2667.0045s
+	iters: 1000, epoch: 3 | loss: 0.0078145
+	speed: 0.0315s/iter; left time: 2742.7180s
+	iters: 1100, epoch: 3 | loss: 0.0071081
+	speed: 0.0302s/iter; left time: 2622.1580s
+	iters: 1200, epoch: 3 | loss: 0.0078033
+	speed: 0.0303s/iter; left time: 2627.8204s
+	iters: 1300, epoch: 3 | loss: 0.0060213
+	speed: 0.0308s/iter; left time: 2669.4244s
+	iters: 1400, epoch: 3 | loss: 0.0091224
+	speed: 0.0303s/iter; left time: 2624.1668s
+	iters: 1500, epoch: 3 | loss: 0.0071408
+	speed: 0.0308s/iter; left time: 2661.8743s
+Epoch: 3 cost time: 46.05632042884827
+Epoch: 3, Steps: 1518 | Train Loss: 0.0076211 Vali Loss: 0.0063799 Test Loss: 0.0087753
+Validation loss decreased (0.008535 --> 0.006380).  Saving model ...
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.0055937
+	speed: 0.1533s/iter; left time: 13251.6876s
+	iters: 200, epoch: 4 | loss: 0.0074993
+	speed: 0.0314s/iter; left time: 2709.9331s
+	iters: 300, epoch: 4 | loss: 0.0055082
+	speed: 0.0307s/iter; left time: 2647.7669s
+	iters: 400, epoch: 4 | loss: 0.0065233
+	speed: 0.0309s/iter; left time: 2664.5955s
+	iters: 500, epoch: 4 | loss: 0.0078040
+	speed: 0.0301s/iter; left time: 2590.8160s
+	iters: 600, epoch: 4 | loss: 0.0082758
+	speed: 0.0306s/iter; left time: 2629.5923s
+	iters: 700, epoch: 4 | loss: 0.0072688
+	speed: 0.0301s/iter; left time: 2583.5492s
+	iters: 800, epoch: 4 | loss: 0.0054650
+	speed: 0.0306s/iter; left time: 2621.1743s
+	iters: 900, epoch: 4 | loss: 0.0071581
+	speed: 0.0301s/iter; left time: 2577.5530s
+	iters: 1000, epoch: 4 | loss: 0.0065378
+	speed: 0.0304s/iter; left time: 2601.5383s
+	iters: 1100, epoch: 4 | loss: 0.0060669
+	speed: 0.0300s/iter; left time: 2560.4250s
+	iters: 1200, epoch: 4 | loss: 0.0050822
+	speed: 0.0300s/iter; left time: 2555.7368s
+	iters: 1300, epoch: 4 | loss: 0.0060391
+	speed: 0.0307s/iter; left time: 2613.6840s
+	iters: 1400, epoch: 4 | loss: 0.0061814
+	speed: 0.0302s/iter; left time: 2573.7838s
+	iters: 1500, epoch: 4 | loss: 0.0059976
+	speed: 0.0309s/iter; left time: 2624.8280s
+Epoch: 4 cost time: 46.42845344543457
+Epoch: 4, Steps: 1518 | Train Loss: 0.0064583 Vali Loss: 0.0052976 Test Loss: 0.0082494
+Validation loss decreased (0.006380 --> 0.005298).  Saving model ...
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 5 | loss: 0.0054681
+	speed: 0.1524s/iter; left time: 12943.9273s
+	iters: 200, epoch: 5 | loss: 0.0059025
+	speed: 0.0307s/iter; left time: 2604.0544s
+	iters: 300, epoch: 5 | loss: 0.0059417
+	speed: 0.0302s/iter; left time: 2557.4603s
+	iters: 400, epoch: 5 | loss: 0.0065843
+	speed: 0.0308s/iter; left time: 2602.1954s
+	iters: 500, epoch: 5 | loss: 0.0072761
+	speed: 0.0304s/iter; left time: 2569.7286s
+	iters: 600, epoch: 5 | loss: 0.0052021
+	speed: 0.0312s/iter; left time: 2630.9741s
+	iters: 700, epoch: 5 | loss: 0.0055010
+	speed: 0.0304s/iter; left time: 2564.1399s
+	iters: 800, epoch: 5 | loss: 0.0058753
+	speed: 0.0307s/iter; left time: 2581.7293s
+	iters: 900, epoch: 5 | loss: 0.0059190
+	speed: 0.0302s/iter; left time: 2537.5811s
+	iters: 1000, epoch: 5 | loss: 0.0061195
+	speed: 0.0302s/iter; left time: 2535.1524s
+	iters: 1100, epoch: 5 | loss: 0.0067713
+	speed: 0.0305s/iter; left time: 2558.6273s
+	iters: 1200, epoch: 5 | loss: 0.0067757
+	speed: 0.0308s/iter; left time: 2580.1406s
+	iters: 1300, epoch: 5 | loss: 0.0059986
+	speed: 0.0314s/iter; left time: 2631.1099s
+	iters: 1400, epoch: 5 | loss: 0.0056745
+	speed: 0.0302s/iter; left time: 2524.3250s
+	iters: 1500, epoch: 5 | loss: 0.0074161
+	speed: 0.0304s/iter; left time: 2540.3617s
+Epoch: 5 cost time: 46.52191138267517
+Epoch: 5, Steps: 1518 | Train Loss: 0.0058462 Vali Loss: 0.0049838 Test Loss: 0.0080917
+Validation loss decreased (0.005298 --> 0.004984).  Saving model ...
+Updating learning rate to 6.25e-06
+	iters: 100, epoch: 6 | loss: 0.0042818
+	speed: 0.1496s/iter; left time: 12476.9997s
+	iters: 200, epoch: 6 | loss: 0.0052809
+	speed: 0.0302s/iter; left time: 2515.3086s
+	iters: 300, epoch: 6 | loss: 0.0074644
+	speed: 0.0296s/iter; left time: 2460.0664s
+	iters: 400, epoch: 6 | loss: 0.0054526
+	speed: 0.0303s/iter; left time: 2516.4193s
+	iters: 500, epoch: 6 | loss: 0.0057425
+	speed: 0.0297s/iter; left time: 2461.8469s
+	iters: 600, epoch: 6 | loss: 0.0055314
+	speed: 0.0301s/iter; left time: 2498.4624s
+	iters: 700, epoch: 6 | loss: 0.0057908
+	speed: 0.0297s/iter; left time: 2457.3675s
+	iters: 800, epoch: 6 | loss: 0.0051954
+	speed: 0.0297s/iter; left time: 2454.3706s
+	iters: 900, epoch: 6 | loss: 0.0055532
+	speed: 0.0307s/iter; left time: 2532.0847s
+	iters: 1000, epoch: 6 | loss: 0.0062775
+	speed: 0.0298s/iter; left time: 2461.3751s
+	iters: 1100, epoch: 6 | loss: 0.0054867
+	speed: 0.0301s/iter; left time: 2482.3511s
+	iters: 1200, epoch: 6 | loss: 0.0043677
+	speed: 0.0295s/iter; left time: 2429.5824s
+	iters: 1300, epoch: 6 | loss: 0.0048185
+	speed: 0.0312s/iter; left time: 2568.3874s
+	iters: 1400, epoch: 6 | loss: 0.0054166
+	speed: 0.0309s/iter; left time: 2534.1643s
+	iters: 1500, epoch: 6 | loss: 0.0049870
+	speed: 0.0310s/iter; left time: 2540.5801s
+Epoch: 6 cost time: 45.93210434913635
+Epoch: 6, Steps: 1518 | Train Loss: 0.0055312 Vali Loss: 0.0048388 Test Loss: 0.0079331
+Validation loss decreased (0.004984 --> 0.004839).  Saving model ...
+Updating learning rate to 3.125e-06
+	iters: 100, epoch: 7 | loss: 0.0051494
+	speed: 0.1535s/iter; left time: 12565.6904s
+	iters: 200, epoch: 7 | loss: 0.0064804
+	speed: 0.0327s/iter; left time: 2672.8835s
+	iters: 300, epoch: 7 | loss: 0.0049353
+	speed: 0.0307s/iter; left time: 2510.5531s
+	iters: 400, epoch: 7 | loss: 0.0048081
+	speed: 0.0306s/iter; left time: 2500.0890s
+	iters: 500, epoch: 7 | loss: 0.0053702
+	speed: 0.0302s/iter; left time: 2458.9038s
+	iters: 600, epoch: 7 | loss: 0.0044142
+	speed: 0.0307s/iter; left time: 2496.0728s
+	iters: 700, epoch: 7 | loss: 0.0053400
+	speed: 0.0301s/iter; left time: 2449.4164s
+	iters: 800, epoch: 7 | loss: 0.0059123
+	speed: 0.0301s/iter; left time: 2444.3661s
+	iters: 900, epoch: 7 | loss: 0.0058915
+	speed: 0.0306s/iter; left time: 2483.8698s
+	iters: 1000, epoch: 7 | loss: 0.0068859
+	speed: 0.0302s/iter; left time: 2441.8312s
+	iters: 1100, epoch: 7 | loss: 0.0047510
+	speed: 0.0307s/iter; left time: 2483.7696s
+	iters: 1200, epoch: 7 | loss: 0.0059602
+	speed: 0.0300s/iter; left time: 2423.4733s
+	iters: 1300, epoch: 7 | loss: 0.0053768
+	speed: 0.0307s/iter; left time: 2474.5603s
+	iters: 1400, epoch: 7 | loss: 0.0049468
+	speed: 0.0299s/iter; left time: 2406.8162s
+	iters: 1500, epoch: 7 | loss: 0.0044976
+	speed: 0.0305s/iter; left time: 2454.2482s
+Epoch: 7 cost time: 46.667765855789185
+Epoch: 7, Steps: 1518 | Train Loss: 0.0053576 Vali Loss: 0.0046564 Test Loss: 0.0077658
+Validation loss decreased (0.004839 --> 0.004656).  Saving model ...
+Updating learning rate to 1.5625e-06
+	iters: 100, epoch: 8 | loss: 0.0055390
+	speed: 0.1553s/iter; left time: 12475.1882s
+	iters: 200, epoch: 8 | loss: 0.0045967
+	speed: 0.0315s/iter; left time: 2527.4989s
+	iters: 300, epoch: 8 | loss: 0.0054907
+	speed: 0.0302s/iter; left time: 2423.6660s
+	iters: 400, epoch: 8 | loss: 0.0051817
+	speed: 0.0338s/iter; left time: 2704.5284s
+	iters: 500, epoch: 8 | loss: 0.0048217
+	speed: 0.0332s/iter; left time: 2654.5382s
+	iters: 600, epoch: 8 | loss: 0.0054770
+	speed: 0.0317s/iter; left time: 2534.5039s
+	iters: 700, epoch: 8 | loss: 0.0050773
+	speed: 0.0317s/iter; left time: 2527.6449s
+	iters: 800, epoch: 8 | loss: 0.0061797
+	speed: 0.0296s/iter; left time: 2355.8410s
+	iters: 900, epoch: 8 | loss: 0.0054986
+	speed: 0.0295s/iter; left time: 2345.2152s
+	iters: 1000, epoch: 8 | loss: 0.0047741
+	speed: 0.0298s/iter; left time: 2370.2041s
+	iters: 1100, epoch: 8 | loss: 0.0058409
+	speed: 0.0319s/iter; left time: 2528.3121s
+	iters: 1200, epoch: 8 | loss: 0.0062814
+	speed: 0.0318s/iter; left time: 2518.8138s
+	iters: 1300, epoch: 8 | loss: 0.0061246
+	speed: 0.0324s/iter; left time: 2567.6819s
+	iters: 1400, epoch: 8 | loss: 0.0042732
+	speed: 0.0319s/iter; left time: 2522.8552s
+	iters: 1500, epoch: 8 | loss: 0.0051475
+	speed: 0.0319s/iter; left time: 2519.6468s
+Epoch: 8 cost time: 47.95064902305603
+Epoch: 8, Steps: 1518 | Train Loss: 0.0052770 Vali Loss: 0.0046224 Test Loss: 0.0077403
+Validation loss decreased (0.004656 --> 0.004622).  Saving model ...
+Updating learning rate to 7.8125e-07
+	iters: 100, epoch: 9 | loss: 0.0053675
+	speed: 0.1612s/iter; left time: 12709.8167s
+	iters: 200, epoch: 9 | loss: 0.0042998
+	speed: 0.0324s/iter; left time: 2553.8485s
+	iters: 300, epoch: 9 | loss: 0.0052759
+	speed: 0.0320s/iter; left time: 2515.6793s
+	iters: 400, epoch: 9 | loss: 0.0056126
+	speed: 0.0325s/iter; left time: 2551.5180s
+	iters: 500, epoch: 9 | loss: 0.0050760
+	speed: 0.0319s/iter; left time: 2501.8426s
+	iters: 600, epoch: 9 | loss: 0.0049951
+	speed: 0.0346s/iter; left time: 2712.4615s
+	iters: 700, epoch: 9 | loss: 0.0059464
+	speed: 0.0321s/iter; left time: 2512.2945s
+	iters: 800, epoch: 9 | loss: 0.0052635
+	speed: 0.0316s/iter; left time: 2472.5977s
+	iters: 900, epoch: 9 | loss: 0.0053790
+	speed: 0.0316s/iter; left time: 2469.8623s
+	iters: 1000, epoch: 9 | loss: 0.0052524
+	speed: 0.0318s/iter; left time: 2481.2121s
+	iters: 1100, epoch: 9 | loss: 0.0053478
+	speed: 0.0324s/iter; left time: 2520.8482s
+	iters: 1200, epoch: 9 | loss: 0.0059434
+	speed: 0.0317s/iter; left time: 2465.0405s
+	iters: 1300, epoch: 9 | loss: 0.0048704
+	speed: 0.0325s/iter; left time: 2520.7519s
+	iters: 1400, epoch: 9 | loss: 0.0055592
+	speed: 0.0319s/iter; left time: 2473.1778s
+	iters: 1500, epoch: 9 | loss: 0.0041355
+	speed: 0.0324s/iter; left time: 2510.9574s
+Epoch: 9 cost time: 49.09776568412781
+Epoch: 9, Steps: 1518 | Train Loss: 0.0052310 Vali Loss: 0.0046149 Test Loss: 0.0077970
+Validation loss decreased (0.004622 --> 0.004615).  Saving model ...
+Updating learning rate to 3.90625e-07
+	iters: 100, epoch: 10 | loss: 0.0048220
+	speed: 0.1599s/iter; left time: 12360.6392s
+	iters: 200, epoch: 10 | loss: 0.0046073
+	speed: 0.0323s/iter; left time: 2494.0355s
+	iters: 300, epoch: 10 | loss: 0.0049144
+	speed: 0.0318s/iter; left time: 2451.0648s
+	iters: 400, epoch: 10 | loss: 0.0045860
+	speed: 0.0318s/iter; left time: 2449.8699s
+	iters: 500, epoch: 10 | loss: 0.0042722
+	speed: 0.0308s/iter; left time: 2366.8575s
+	iters: 600, epoch: 10 | loss: 0.0057643
+	speed: 0.0316s/iter; left time: 2429.1329s
+	iters: 700, epoch: 10 | loss: 0.0060837
+	speed: 0.0323s/iter; left time: 2474.4297s
+	iters: 800, epoch: 10 | loss: 0.0038857
+	speed: 0.0339s/iter; left time: 2594.0137s
+	iters: 900, epoch: 10 | loss: 0.0042664
+	speed: 0.0355s/iter; left time: 2716.1107s
+	iters: 1000, epoch: 10 | loss: 0.0050997
+	speed: 0.0352s/iter; left time: 2688.5473s
+	iters: 1100, epoch: 10 | loss: 0.0047124
+	speed: 0.0330s/iter; left time: 2517.6452s
+	iters: 1200, epoch: 10 | loss: 0.0055656
+	speed: 0.0322s/iter; left time: 2451.1417s
+	iters: 1300, epoch: 10 | loss: 0.0051372
+	speed: 0.0314s/iter; left time: 2388.4518s
+	iters: 1400, epoch: 10 | loss: 0.0059247
+	speed: 0.0308s/iter; left time: 2340.1507s
+	iters: 1500, epoch: 10 | loss: 0.0062934
+	speed: 0.0316s/iter; left time: 2396.5281s
+Epoch: 10 cost time: 49.31765604019165
+Epoch: 10, Steps: 1518 | Train Loss: 0.0052050 Vali Loss: 0.0046245 Test Loss: 0.0078417
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 1.953125e-07
+	iters: 100, epoch: 11 | loss: 0.0052787
+	speed: 0.1625s/iter; left time: 12314.1209s
+	iters: 200, epoch: 11 | loss: 0.0057783
+	speed: 0.0359s/iter; left time: 2720.3930s
+	iters: 300, epoch: 11 | loss: 0.0051834
+	speed: 0.0323s/iter; left time: 2442.7822s
+	iters: 400, epoch: 11 | loss: 0.0051050
+	speed: 0.0308s/iter; left time: 2327.0458s
+	iters: 500, epoch: 11 | loss: 0.0044523
+	speed: 0.0314s/iter; left time: 2366.9759s
+	iters: 600, epoch: 11 | loss: 0.0052155
+	speed: 0.0309s/iter; left time: 2325.1863s
+	iters: 700, epoch: 11 | loss: 0.0059136
+	speed: 0.0310s/iter; left time: 2332.7951s
+	iters: 800, epoch: 11 | loss: 0.0057608
+	speed: 0.0315s/iter; left time: 2364.1852s
+	iters: 900, epoch: 11 | loss: 0.0054392
+	speed: 0.0317s/iter; left time: 2380.8808s
+	iters: 1000, epoch: 11 | loss: 0.0051413
+	speed: 0.0321s/iter; left time: 2407.5914s
+	iters: 1100, epoch: 11 | loss: 0.0048335
+	speed: 0.0332s/iter; left time: 2480.4456s
+	iters: 1200, epoch: 11 | loss: 0.0052141
+	speed: 0.0330s/iter; left time: 2466.7531s
+	iters: 1300, epoch: 11 | loss: 0.0061587
+	speed: 0.0350s/iter; left time: 2609.7126s
+	iters: 1400, epoch: 11 | loss: 0.0052497
+	speed: 0.0323s/iter; left time: 2409.4042s
+	iters: 1500, epoch: 11 | loss: 0.0046034
+	speed: 0.0318s/iter; left time: 2367.3523s
+Epoch: 11 cost time: 49.422629594802856
+Epoch: 11, Steps: 1518 | Train Loss: 0.0051887 Vali Loss: 0.0046080 Test Loss: 0.0078054
+Validation loss decreased (0.004615 --> 0.004608).  Saving model ...
+Updating learning rate to 9.765625e-08
+	iters: 100, epoch: 12 | loss: 0.0054653
+	speed: 0.1623s/iter; left time: 12053.0105s
+	iters: 200, epoch: 12 | loss: 0.0045650
+	speed: 0.0321s/iter; left time: 2378.4549s
+	iters: 300, epoch: 12 | loss: 0.0055294
+	speed: 0.0328s/iter; left time: 2427.3461s
+	iters: 400, epoch: 12 | loss: 0.0054903
+	speed: 0.0334s/iter; left time: 2468.6061s
+	iters: 500, epoch: 12 | loss: 0.0044264
+	speed: 0.0344s/iter; left time: 2543.7017s
+	iters: 600, epoch: 12 | loss: 0.0056825
+	speed: 0.0319s/iter; left time: 2350.5229s
+	iters: 700, epoch: 12 | loss: 0.0041705
+	speed: 0.0316s/iter; left time: 2329.2844s
+	iters: 800, epoch: 12 | loss: 0.0050925
+	speed: 0.0309s/iter; left time: 2271.4999s
+	iters: 900, epoch: 12 | loss: 0.0055073
+	speed: 0.0310s/iter; left time: 2275.8883s
+	iters: 1000, epoch: 12 | loss: 0.0046851
+	speed: 0.0308s/iter; left time: 2259.3551s
+	iters: 1100, epoch: 12 | loss: 0.0050492
+	speed: 0.0311s/iter; left time: 2280.9533s
+	iters: 1200, epoch: 12 | loss: 0.0049764
+	speed: 0.0324s/iter; left time: 2372.1970s
+	iters: 1300, epoch: 12 | loss: 0.0048308
+	speed: 0.0327s/iter; left time: 2387.7791s
+	iters: 1400, epoch: 12 | loss: 0.0053276
+	speed: 0.0321s/iter; left time: 2340.1148s
+	iters: 1500, epoch: 12 | loss: 0.0050581
+	speed: 0.0320s/iter; left time: 2332.7273s
+Epoch: 12 cost time: 48.925806522369385
+Epoch: 12, Steps: 1518 | Train Loss: 0.0051911 Vali Loss: 0.0046281 Test Loss: 0.0078496
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 4.8828125e-08
+	iters: 100, epoch: 13 | loss: 0.0057534
+	speed: 0.1568s/iter; left time: 11413.1765s
+	iters: 200, epoch: 13 | loss: 0.0049166
+	speed: 0.0315s/iter; left time: 2289.8770s
+	iters: 300, epoch: 13 | loss: 0.0045570
+	speed: 0.0330s/iter; left time: 2396.7712s
+	iters: 400, epoch: 13 | loss: 0.0048074
+	speed: 0.0321s/iter; left time: 2325.0896s
+	iters: 500, epoch: 13 | loss: 0.0078023
+	speed: 0.0327s/iter; left time: 2364.3823s
+	iters: 600, epoch: 13 | loss: 0.0043361
+	speed: 0.0322s/iter; left time: 2329.3853s
+	iters: 700, epoch: 13 | loss: 0.0045640
+	speed: 0.0337s/iter; left time: 2432.2082s
+	iters: 800, epoch: 13 | loss: 0.0054898
+	speed: 0.0322s/iter; left time: 2321.0952s
+	iters: 900, epoch: 13 | loss: 0.0045703
+	speed: 0.0322s/iter; left time: 2314.4296s
+	iters: 1000, epoch: 13 | loss: 0.0057291
+	speed: 0.0312s/iter; left time: 2240.1802s
+	iters: 1100, epoch: 13 | loss: 0.0050346
+	speed: 0.0318s/iter; left time: 2283.4473s
+	iters: 1200, epoch: 13 | loss: 0.0044743
+	speed: 0.0317s/iter; left time: 2271.0241s
+	iters: 1300, epoch: 13 | loss: 0.0043914
+	speed: 0.0304s/iter; left time: 2172.1886s
+	iters: 1400, epoch: 13 | loss: 0.0053538
+	speed: 0.0324s/iter; left time: 2315.5020s
+	iters: 1500, epoch: 13 | loss: 0.0053304
+	speed: 0.0322s/iter; left time: 2296.7143s
+Epoch: 13 cost time: 48.94330596923828
+Epoch: 13, Steps: 1518 | Train Loss: 0.0051879 Vali Loss: 0.0046087 Test Loss: 0.0078379
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 2.44140625e-08
+	iters: 100, epoch: 14 | loss: 0.0044672
+	speed: 0.1609s/iter; left time: 11461.5395s
+	iters: 200, epoch: 14 | loss: 0.0047640
+	speed: 0.0310s/iter; left time: 2206.1243s
+	iters: 300, epoch: 14 | loss: 0.0056591
+	speed: 0.0314s/iter; left time: 2233.3127s
+	iters: 400, epoch: 14 | loss: 0.0047419
+	speed: 0.0314s/iter; left time: 2225.9209s
+	iters: 500, epoch: 14 | loss: 0.0049976
+	speed: 0.0329s/iter; left time: 2330.8837s
+	iters: 600, epoch: 14 | loss: 0.0044190
+	speed: 0.0320s/iter; left time: 2265.8377s
+	iters: 700, epoch: 14 | loss: 0.0059905
+	speed: 0.0327s/iter; left time: 2312.9721s
+	iters: 800, epoch: 14 | loss: 0.0052963
+	speed: 0.0325s/iter; left time: 2290.9013s
+	iters: 900, epoch: 14 | loss: 0.0055046
+	speed: 0.0330s/iter; left time: 2325.6423s
+	iters: 1000, epoch: 14 | loss: 0.0061119
+	speed: 0.0309s/iter; left time: 2171.2598s
+	iters: 1100, epoch: 14 | loss: 0.0053732
+	speed: 0.0315s/iter; left time: 2211.9651s
+	iters: 1200, epoch: 14 | loss: 0.0052256
+	speed: 0.0309s/iter; left time: 2167.5001s
+	iters: 1300, epoch: 14 | loss: 0.0049659
+	speed: 0.0315s/iter; left time: 2203.9519s
+	iters: 1400, epoch: 14 | loss: 0.0054358
+	speed: 0.0324s/iter; left time: 2263.4561s
+	iters: 1500, epoch: 14 | loss: 0.0051491
+	speed: 0.0323s/iter; left time: 2252.6929s
+Epoch: 14 cost time: 48.639429569244385
+Epoch: 14, Steps: 1518 | Train Loss: 0.0051793 Vali Loss: 0.0046014 Test Loss: 0.0078114
+Validation loss decreased (0.004608 --> 0.004601).  Saving model ...
+Updating learning rate to 1.220703125e-08
+	iters: 100, epoch: 15 | loss: 0.0049722
+	speed: 0.1645s/iter; left time: 11468.4232s
+	iters: 200, epoch: 15 | loss: 0.0052967
+	speed: 0.0308s/iter; left time: 2145.9978s
+	iters: 300, epoch: 15 | loss: 0.0056578
+	speed: 0.0314s/iter; left time: 2184.2542s
+	iters: 400, epoch: 15 | loss: 0.0051805
+	speed: 0.0307s/iter; left time: 2131.5769s
+	iters: 500, epoch: 15 | loss: 0.0047315
+	speed: 0.0321s/iter; left time: 2228.8828s
+	iters: 600, epoch: 15 | loss: 0.0041877
+	speed: 0.0316s/iter; left time: 2188.8232s
+	iters: 700, epoch: 15 | loss: 0.0050149
+	speed: 0.0329s/iter; left time: 2272.6008s
+	iters: 800, epoch: 15 | loss: 0.0056283
+	speed: 0.0321s/iter; left time: 2218.2780s
+	iters: 900, epoch: 15 | loss: 0.0048893
+	speed: 0.0328s/iter; left time: 2260.0603s
+	iters: 1000, epoch: 15 | loss: 0.0056957
+	speed: 0.0323s/iter; left time: 2221.4428s
+	iters: 1100, epoch: 15 | loss: 0.0062396
+	speed: 0.0331s/iter; left time: 2276.2862s
+	iters: 1200, epoch: 15 | loss: 0.0067475
+	speed: 0.0311s/iter; left time: 2133.3137s
+	iters: 1300, epoch: 15 | loss: 0.0049089
+	speed: 0.0310s/iter; left time: 2123.8398s
+	iters: 1400, epoch: 15 | loss: 0.0051562
+	speed: 0.0316s/iter; left time: 2163.5073s
+	iters: 1500, epoch: 15 | loss: 0.0051327
+	speed: 0.0312s/iter; left time: 2135.1714s
+Epoch: 15 cost time: 48.39757966995239
+Epoch: 15, Steps: 1518 | Train Loss: 0.0051816 Vali Loss: 0.0045888 Test Loss: 0.0078114
+Validation loss decreased (0.004601 --> 0.004589).  Saving model ...
+Updating learning rate to 6.103515625e-09
+	iters: 100, epoch: 16 | loss: 0.0044498
+	speed: 0.1639s/iter; left time: 11179.7909s
+	iters: 200, epoch: 16 | loss: 0.0046864
+	speed: 0.0325s/iter; left time: 2215.2864s
+	iters: 300, epoch: 16 | loss: 0.0049318
+	speed: 0.0320s/iter; left time: 2178.3394s
+	iters: 400, epoch: 16 | loss: 0.0055595
+	speed: 0.0307s/iter; left time: 2086.5294s
+	iters: 500, epoch: 16 | loss: 0.0054616
+	speed: 0.0313s/iter; left time: 2120.8345s
+	iters: 600, epoch: 16 | loss: 0.0053205
+	speed: 0.0308s/iter; left time: 2083.7052s
+	iters: 700, epoch: 16 | loss: 0.0045726
+	speed: 0.0315s/iter; left time: 2130.6833s
+	iters: 800, epoch: 16 | loss: 0.0057544
+	speed: 0.0320s/iter; left time: 2159.9015s
+	iters: 900, epoch: 16 | loss: 0.0048732
+	speed: 0.0323s/iter; left time: 2174.8125s
+	iters: 1000, epoch: 16 | loss: 0.0049024
+	speed: 0.0322s/iter; left time: 2165.7354s
+	iters: 1100, epoch: 16 | loss: 0.0054582
+	speed: 0.0325s/iter; left time: 2183.1608s
+	iters: 1200, epoch: 16 | loss: 0.0056893
+	speed: 0.0325s/iter; left time: 2179.1727s
+	iters: 1300, epoch: 16 | loss: 0.0053417
+	speed: 0.0325s/iter; left time: 2175.0541s
+	iters: 1400, epoch: 16 | loss: 0.0058926
+	speed: 0.0323s/iter; left time: 2161.9934s
+	iters: 1500, epoch: 16 | loss: 0.0058658
+	speed: 0.0310s/iter; left time: 2068.9418s
+Epoch: 16 cost time: 48.59253811836243
+Epoch: 16, Steps: 1518 | Train Loss: 0.0051906 Vali Loss: 0.0046109 Test Loss: 0.0078441
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 3.0517578125e-09
+	iters: 100, epoch: 17 | loss: 0.0050436
+	speed: 0.1567s/iter; left time: 10449.2039s
+	iters: 200, epoch: 17 | loss: 0.0046839
+	speed: 0.0322s/iter; left time: 2142.7126s
+	iters: 300, epoch: 17 | loss: 0.0056204
+	speed: 0.0332s/iter; left time: 2208.2935s
+	iters: 400, epoch: 17 | loss: 0.0049976
+	speed: 0.0322s/iter; left time: 2135.6228s
+	iters: 500, epoch: 17 | loss: 0.0054095
+	speed: 0.0331s/iter; left time: 2194.9501s
+	iters: 600, epoch: 17 | loss: 0.0045547
+	speed: 0.0312s/iter; left time: 2067.8477s
+	iters: 700, epoch: 17 | loss: 0.0051691
+	speed: 0.0316s/iter; left time: 2089.8081s
+	iters: 800, epoch: 17 | loss: 0.0043494
+	speed: 0.0310s/iter; left time: 2042.6240s
+	iters: 900, epoch: 17 | loss: 0.0057616
+	speed: 0.0317s/iter; left time: 2088.1211s
+	iters: 1000, epoch: 17 | loss: 0.0054235
+	speed: 0.0317s/iter; left time: 2084.5125s
+	iters: 1100, epoch: 17 | loss: 0.0053058
+	speed: 0.0325s/iter; left time: 2133.9957s
+	iters: 1200, epoch: 17 | loss: 0.0045213
+	speed: 0.0327s/iter; left time: 2147.0304s
+	iters: 1300, epoch: 17 | loss: 0.0042559
+	speed: 0.0321s/iter; left time: 2104.6771s
+	iters: 1400, epoch: 17 | loss: 0.0059923
+	speed: 0.0330s/iter; left time: 2160.5751s
+	iters: 1500, epoch: 17 | loss: 0.0052739
+	speed: 0.0322s/iter; left time: 2100.9799s
+Epoch: 17 cost time: 48.998855113983154
+Epoch: 17, Steps: 1518 | Train Loss: 0.0051897 Vali Loss: 0.0045809 Test Loss: 0.0077854
+Validation loss decreased (0.004589 --> 0.004581).  Saving model ...
+Updating learning rate to 1.52587890625e-09
+	iters: 100, epoch: 18 | loss: 0.0056836
+	speed: 0.1582s/iter; left time: 10307.6389s
+	iters: 200, epoch: 18 | loss: 0.0060444
+	speed: 0.0317s/iter; left time: 2060.9754s
+	iters: 300, epoch: 18 | loss: 0.0048056
+	speed: 0.0328s/iter; left time: 2129.5565s
+	iters: 400, epoch: 18 | loss: 0.0047371
+	speed: 0.0324s/iter; left time: 2101.2138s
+	iters: 500, epoch: 18 | loss: 0.0052119
+	speed: 0.0326s/iter; left time: 2112.2651s
+	iters: 600, epoch: 18 | loss: 0.0049764
+	speed: 0.0325s/iter; left time: 2102.1293s
+	iters: 700, epoch: 18 | loss: 0.0053341
+	speed: 0.0319s/iter; left time: 2062.0490s
+	iters: 800, epoch: 18 | loss: 0.0050427
+	speed: 0.0310s/iter; left time: 1999.0599s
+	iters: 900, epoch: 18 | loss: 0.0051015
+	speed: 0.0311s/iter; left time: 2003.9593s
+	iters: 1000, epoch: 18 | loss: 0.0048287
+	speed: 0.0313s/iter; left time: 2009.2642s
+	iters: 1100, epoch: 18 | loss: 0.0051979
+	speed: 0.0306s/iter; left time: 1960.8563s
+	iters: 1200, epoch: 18 | loss: 0.0048280
+	speed: 0.0313s/iter; left time: 2008.4773s
+	iters: 1300, epoch: 18 | loss: 0.0055616
+	speed: 0.0324s/iter; left time: 2071.0515s
+	iters: 1400, epoch: 18 | loss: 0.0055155
+	speed: 0.0328s/iter; left time: 2094.8595s
+	iters: 1500, epoch: 18 | loss: 0.0047329
+	speed: 0.0323s/iter; left time: 2057.8660s
+Epoch: 18 cost time: 48.5971896648407
+Epoch: 18, Steps: 1518 | Train Loss: 0.0051855 Vali Loss: 0.0046185 Test Loss: 0.0078475
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 7.62939453125e-10
+	iters: 100, epoch: 19 | loss: 0.0047525
+	speed: 0.1596s/iter; left time: 10157.3813s
+	iters: 200, epoch: 19 | loss: 0.0049736
+	speed: 0.0313s/iter; left time: 1986.5704s
+	iters: 300, epoch: 19 | loss: 0.0043080
+	speed: 0.0324s/iter; left time: 2056.0265s
+	iters: 400, epoch: 19 | loss: 0.0059224
+	speed: 0.0305s/iter; left time: 1930.2938s
+	iters: 500, epoch: 19 | loss: 0.0052004
+	speed: 0.0331s/iter; left time: 2091.2019s
+	iters: 600, epoch: 19 | loss: 0.0045540
+	speed: 0.0324s/iter; left time: 2049.2972s
+	iters: 700, epoch: 19 | loss: 0.0052689
+	speed: 0.0325s/iter; left time: 2049.0661s
+	iters: 800, epoch: 19 | loss: 0.0047316
+	speed: 0.0322s/iter; left time: 2028.1439s
+	iters: 900, epoch: 19 | loss: 0.0050155
+	speed: 0.0321s/iter; left time: 2020.0988s
+	iters: 1000, epoch: 19 | loss: 0.0047202
+	speed: 0.0316s/iter; left time: 1986.0246s
+	iters: 1100, epoch: 19 | loss: 0.0048027
+	speed: 0.0311s/iter; left time: 1950.7957s
+	iters: 1200, epoch: 19 | loss: 0.0055004
+	speed: 0.0317s/iter; left time: 1981.7925s
+	iters: 1300, epoch: 19 | loss: 0.0050505
+	speed: 0.0314s/iter; left time: 1960.1343s
+	iters: 1400, epoch: 19 | loss: 0.0041005
+	speed: 0.0322s/iter; left time: 2008.7848s
+	iters: 1500, epoch: 19 | loss: 0.0044440
+	speed: 0.0323s/iter; left time: 2009.6816s
+Epoch: 19 cost time: 48.62037467956543
+Epoch: 19, Steps: 1518 | Train Loss: 0.0051872 Vali Loss: 0.0046004 Test Loss: 0.0078364
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 3.814697265625e-10
+	iters: 100, epoch: 20 | loss: 0.0055316
+	speed: 0.1623s/iter; left time: 10083.9705s
+	iters: 200, epoch: 20 | loss: 0.0066226
+	speed: 0.0313s/iter; left time: 1941.8313s
+	iters: 300, epoch: 20 | loss: 0.0044787
+	speed: 0.0315s/iter; left time: 1952.0607s
+	iters: 400, epoch: 20 | loss: 0.0043351
+	speed: 0.0319s/iter; left time: 1974.1071s
+	iters: 500, epoch: 20 | loss: 0.0048521
+	speed: 0.0304s/iter; left time: 1874.9370s
+	iters: 600, epoch: 20 | loss: 0.0052758
+	speed: 0.0323s/iter; left time: 1992.0022s
+	iters: 700, epoch: 20 | loss: 0.0054809
+	speed: 0.0321s/iter; left time: 1977.7107s
+	iters: 800, epoch: 20 | loss: 0.0060756
+	speed: 0.0328s/iter; left time: 2017.5101s
+	iters: 900, epoch: 20 | loss: 0.0042457
+	speed: 0.0323s/iter; left time: 1978.4133s
+	iters: 1000, epoch: 20 | loss: 0.0052292
+	speed: 0.0330s/iter; left time: 2023.6860s
+	iters: 1100, epoch: 20 | loss: 0.0045883
+	speed: 0.0309s/iter; left time: 1888.1444s
+	iters: 1200, epoch: 20 | loss: 0.0054590
+	speed: 0.0316s/iter; left time: 1928.4042s
+	iters: 1300, epoch: 20 | loss: 0.0051328
+	speed: 0.0310s/iter; left time: 1891.1145s
+	iters: 1400, epoch: 20 | loss: 0.0042531
+	speed: 0.0317s/iter; left time: 1927.8067s
+	iters: 1500, epoch: 20 | loss: 0.0056152
+	speed: 0.0313s/iter; left time: 1901.9639s
+Epoch: 20 cost time: 48.36140775680542
+Epoch: 20, Steps: 1518 | Train Loss: 0.0051854 Vali Loss: 0.0046050 Test Loss: 0.0078364
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test data size x=(511200, 12, 136), y=(511200, 2, 7)
+test 511200
+test shape: (426, 1200, 1, 7) (426, 1200, 1, 7)
+test shape: (511200, 1, 7) (511200, 1, 7)
+mse:0.007785420399159193, mae:0.0342094786465168
+Working on age: [  1  10  20  30  50  70 100 150 200 250 300 350 400 450 500]
+  Target age: [  1  10  20  30  50  70 100 150 200 250 300 350 400 450 500]
+--- Start evaluation ---
+  Target age: [  1  10  20  30  50  70 100 150 200 250 300 350 400 450 500]
+X shape: (852, 40, 12, 136), Y shape: (15, 852, 41, 12, 7)
+  0%|          | 0/15 [00:00<?, ?it/s]  7%|▋         | 1/15 [00:01<00:15,  1.12s/it] 13%|█▎        | 2/15 [00:02<00:14,  1.13s/it] 20%|██        | 3/15 [00:03<00:13,  1.11s/it] 27%|██▋       | 4/15 [00:04<00:12,  1.10s/it] 33%|███▎      | 5/15 [00:05<00:10,  1.09s/it] 40%|████      | 6/15 [00:06<00:10,  1.13s/it] 47%|████▋     | 7/15 [00:07<00:09,  1.18s/it] 53%|█████▎    | 8/15 [00:09<00:08,  1.18s/it] 60%|██████    | 9/15 [00:10<00:06,  1.15s/it] 67%|██████▋   | 10/15 [00:11<00:05,  1.14s/it] 73%|███████▎  | 11/15 [00:12<00:04,  1.14s/it] 80%|████████  | 12/15 [00:13<00:03,  1.12s/it] 87%|████████▋ | 13/15 [00:14<00:02,  1.12s/it] 93%|█████████▎| 14/15 [00:15<00:01,  1.10s/it]100%|██████████| 15/15 [00:16<00:00,  1.12s/it]100%|██████████| 15/15 [00:16<00:00,  1.13s/it]
+  Spent 0.3 min for evaluation.
+
+  Plot done!
+
+--- Start evaluation ---
+  Target age: [  1  10  20  30  50  70 100 150 200 250 300 350 400 450 500]
+X shape: (852, 40, 12, 136), Y shape: (15, 852, 41, 12, 7)
+  0%|          | 0/15 [00:00<?, ?it/s]  7%|▋         | 1/15 [00:01<00:17,  1.27s/it] 13%|█▎        | 2/15 [00:02<00:16,  1.26s/it] 20%|██        | 3/15 [00:03<00:15,  1.26s/it] 27%|██▋       | 4/15 [00:05<00:13,  1.26s/it] 33%|███▎      | 5/15 [00:06<00:12,  1.25s/it] 40%|████      | 6/15 [00:07<00:10,  1.18s/it] 47%|████▋     | 7/15 [00:08<00:09,  1.15s/it] 53%|█████▎    | 8/15 [00:09<00:07,  1.12s/it] 60%|██████    | 9/15 [00:10<00:06,  1.11s/it] 67%|██████▋   | 10/15 [00:11<00:05,  1.10s/it] 73%|███████▎  | 11/15 [00:12<00:04,  1.12s/it] 80%|████████  | 12/15 [00:13<00:03,  1.11s/it] 87%|████████▋ | 13/15 [00:14<00:02,  1.10s/it] 93%|█████████▎| 14/15 [00:16<00:01,  1.11s/it]100%|██████████| 15/15 [00:17<00:00,  1.08s/it]100%|██████████| 15/15 [00:17<00:00,  1.14s/it]
+  Spent 0.3 min for evaluation.
+
+  Plot done!
+
+--- Start evaluation ---
+  Target age: 050
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:14,  2.70it/s]  5%|▌         | 2/40 [00:00<00:13,  2.78it/s]  8%|▊         | 3/40 [00:01<00:13,  2.69it/s] 10%|█         | 4/40 [00:01<00:13,  2.60it/s] 12%|█▎        | 5/40 [00:01<00:13,  2.54it/s] 15%|█▌        | 6/40 [00:02<00:13,  2.50it/s] 18%|█▊        | 7/40 [00:02<00:13,  2.46it/s] 20%|██        | 8/40 [00:03<00:13,  2.44it/s] 22%|██▎       | 9/40 [00:03<00:12,  2.43it/s] 25%|██▌       | 10/40 [00:04<00:12,  2.42it/s] 28%|██▊       | 11/40 [00:04<00:11,  2.53it/s] 30%|███       | 12/40 [00:04<00:10,  2.67it/s] 32%|███▎      | 13/40 [00:05<00:09,  2.72it/s] 35%|███▌      | 14/40 [00:05<00:09,  2.69it/s] 38%|███▊      | 15/40 [00:05<00:09,  2.68it/s] 40%|████      | 16/40 [00:06<00:09,  2.66it/s] 42%|████▎     | 17/40 [00:06<00:08,  2.57it/s] 45%|████▌     | 18/40 [00:07<00:08,  2.52it/s] 48%|████▊     | 19/40 [00:07<00:08,  2.49it/s] 50%|█████     | 20/40 [00:07<00:08,  2.46it/s] 52%|█████▎    | 21/40 [00:08<00:07,  2.44it/s] 55%|█████▌    | 22/40 [00:08<00:07,  2.43it/s] 57%|█████▊    | 23/40 [00:09<00:06,  2.54it/s] 60%|██████    | 24/40 [00:09<00:06,  2.65it/s] 62%|██████▎   | 25/40 [00:09<00:05,  2.72it/s] 65%|██████▌   | 26/40 [00:10<00:05,  2.77it/s] 68%|██████▊   | 27/40 [00:10<00:04,  2.82it/s] 70%|███████   | 28/40 [00:10<00:04,  2.85it/s] 72%|███████▎  | 29/40 [00:11<00:03,  2.88it/s] 75%|███████▌  | 30/40 [00:11<00:03,  2.80it/s] 78%|███████▊  | 31/40 [00:11<00:03,  2.71it/s] 80%|████████  | 32/40 [00:12<00:03,  2.64it/s] 82%|████████▎ | 33/40 [00:12<00:02,  2.56it/s] 85%|████████▌ | 34/40 [00:13<00:02,  2.51it/s] 88%|████████▊ | 35/40 [00:13<00:02,  2.48it/s] 90%|█████████ | 36/40 [00:13<00:01,  2.46it/s] 92%|█████████▎| 37/40 [00:14<00:01,  2.43it/s] 95%|█████████▌| 38/40 [00:14<00:00,  2.52it/s] 98%|█████████▊| 39/40 [00:15<00:00,  2.61it/s]100%|██████████| 40/40 [00:15<00:00,  2.62it/s]100%|██████████| 40/40 [00:15<00:00,  2.59it/s]
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:13,  2.80it/s]  5%|▌         | 2/40 [00:00<00:12,  3.00it/s]  8%|▊         | 3/40 [00:01<00:12,  2.93it/s] 10%|█         | 4/40 [00:01<00:12,  2.94it/s] 12%|█▎        | 5/40 [00:01<00:11,  2.95it/s] 15%|█▌        | 6/40 [00:02<00:11,  2.96it/s] 18%|█▊        | 7/40 [00:02<00:11,  2.97it/s] 20%|██        | 8/40 [00:02<00:10,  2.97it/s] 22%|██▎       | 9/40 [00:03<00:10,  2.97it/s] 25%|██▌       | 10/40 [00:03<00:10,  2.98it/s] 28%|██▊       | 11/40 [00:03<00:09,  2.97it/s] 30%|███       | 12/40 [00:04<00:09,  2.87it/s] 32%|███▎      | 13/40 [00:04<00:09,  2.87it/s] 35%|███▌      | 14/40 [00:04<00:09,  2.76it/s] 38%|███▊      | 15/40 [00:05<00:09,  2.70it/s] 40%|████      | 16/40 [00:05<00:09,  2.60it/s] 42%|████▎     | 17/40 [00:06<00:09,  2.52it/s] 45%|████▌     | 18/40 [00:06<00:08,  2.49it/s] 48%|████▊     | 19/40 [00:06<00:08,  2.58it/s] 50%|█████     | 20/40 [00:07<00:07,  2.65it/s] 52%|█████▎    | 21/40 [00:07<00:06,  2.72it/s] 55%|█████▌    | 22/40 [00:07<00:06,  2.77it/s] 57%|█████▊    | 23/40 [00:08<00:06,  2.80it/s] 60%|██████    | 24/40 [00:08<00:05,  2.83it/s] 62%|██████▎   | 25/40 [00:08<00:05,  2.74it/s] 65%|██████▌   | 26/40 [00:09<00:05,  2.70it/s] 68%|██████▊   | 27/40 [00:09<00:04,  2.70it/s] 70%|███████   | 28/40 [00:10<00:04,  2.68it/s] 72%|███████▎  | 29/40 [00:10<00:04,  2.68it/s] 75%|███████▌  | 30/40 [00:10<00:03,  2.67it/s] 78%|███████▊  | 31/40 [00:11<00:03,  2.66it/s] 80%|████████  | 32/40 [00:11<00:03,  2.63it/s] 82%|████████▎ | 33/40 [00:11<00:02,  2.63it/s] 85%|████████▌ | 34/40 [00:12<00:02,  2.63it/s] 88%|████████▊ | 35/40 [00:12<00:01,  2.63it/s] 90%|█████████ | 36/40 [00:13<00:01,  2.63it/s] 92%|█████████▎| 37/40 [00:13<00:01,  2.63it/s] 95%|█████████▌| 38/40 [00:13<00:00,  2.63it/s] 98%|█████████▊| 39/40 [00:14<00:00,  2.64it/s]100%|██████████| 40/40 [00:14<00:00,  2.64it/s]100%|██████████| 40/40 [00:14<00:00,  2.73it/s]
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age050_pred_sub0.npy has been deleted successfully.
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age050_pred_sub1.npy has been deleted successfully.
+  Spent 1.4 min for evaluation.
+
+--- Start evaluation ---
+  Target age: 010
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:15,  2.52it/s]  5%|▌         | 2/40 [00:00<00:14,  2.59it/s]  8%|▊         | 3/40 [00:01<00:14,  2.61it/s] 10%|█         | 4/40 [00:01<00:13,  2.59it/s] 12%|█▎        | 5/40 [00:01<00:13,  2.59it/s] 15%|█▌        | 6/40 [00:02<00:13,  2.58it/s] 18%|█▊        | 7/40 [00:02<00:12,  2.56it/s] 20%|██        | 8/40 [00:03<00:12,  2.58it/s] 22%|██▎       | 9/40 [00:03<00:11,  2.62it/s] 25%|██▌       | 10/40 [00:03<00:11,  2.63it/s] 28%|██▊       | 11/40 [00:04<00:11,  2.61it/s] 30%|███       | 12/40 [00:04<00:10,  2.61it/s] 32%|███▎      | 13/40 [00:04<00:10,  2.62it/s] 35%|███▌      | 14/40 [00:05<00:09,  2.63it/s] 38%|███▊      | 15/40 [00:05<00:09,  2.64it/s] 40%|████      | 16/40 [00:06<00:09,  2.61it/s] 42%|████▎     | 17/40 [00:06<00:08,  2.60it/s] 45%|████▌     | 18/40 [00:06<00:08,  2.59it/s] 48%|████▊     | 19/40 [00:07<00:08,  2.58it/s] 50%|█████     | 20/40 [00:07<00:07,  2.70it/s] 52%|█████▎    | 21/40 [00:07<00:06,  2.80it/s] 55%|█████▌    | 22/40 [00:08<00:06,  2.83it/s] 57%|█████▊    | 23/40 [00:08<00:05,  2.85it/s] 60%|██████    | 24/40 [00:09<00:05,  2.86it/s] 62%|██████▎   | 25/40 [00:09<00:05,  2.88it/s] 65%|██████▌   | 26/40 [00:09<00:04,  2.89it/s] 68%|██████▊   | 27/40 [00:10<00:04,  2.90it/s] 70%|███████   | 28/40 [00:10<00:04,  2.90it/s] 72%|███████▎  | 29/40 [00:10<00:03,  2.90it/s] 75%|███████▌  | 30/40 [00:11<00:03,  2.90it/s] 78%|███████▊  | 31/40 [00:11<00:03,  2.91it/s] 80%|████████  | 32/40 [00:11<00:02,  2.92it/s] 82%|████████▎ | 33/40 [00:12<00:02,  2.98it/s] 85%|████████▌ | 34/40 [00:12<00:02,  2.86it/s] 88%|████████▊ | 35/40 [00:12<00:01,  2.78it/s] 90%|█████████ | 36/40 [00:13<00:01,  2.66it/s] 92%|█████████▎| 37/40 [00:13<00:01,  2.59it/s] 95%|█████████▌| 38/40 [00:14<00:00,  2.53it/s] 98%|█████████▊| 39/40 [00:14<00:00,  2.49it/s]100%|██████████| 40/40 [00:14<00:00,  2.45it/s]100%|██████████| 40/40 [00:14<00:00,  2.68it/s]
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:13,  2.81it/s]  5%|▌         | 2/40 [00:00<00:12,  2.94it/s]  8%|▊         | 3/40 [00:01<00:12,  2.90it/s] 10%|█         | 4/40 [00:01<00:12,  2.88it/s] 12%|█▎        | 5/40 [00:01<00:12,  2.86it/s] 15%|█▌        | 6/40 [00:02<00:11,  2.87it/s] 18%|█▊        | 7/40 [00:02<00:11,  2.87it/s] 20%|██        | 8/40 [00:02<00:11,  2.87it/s] 22%|██▎       | 9/40 [00:03<00:10,  2.86it/s] 25%|██▌       | 10/40 [00:03<00:10,  2.87it/s] 28%|██▊       | 11/40 [00:03<00:10,  2.87it/s] 30%|███       | 12/40 [00:04<00:09,  2.87it/s] 32%|███▎      | 13/40 [00:04<00:09,  2.87it/s] 35%|███▌      | 14/40 [00:04<00:09,  2.87it/s] 38%|███▊      | 15/40 [00:05<00:08,  2.87it/s] 40%|████      | 16/40 [00:05<00:08,  2.87it/s] 42%|████▎     | 17/40 [00:05<00:08,  2.87it/s] 45%|████▌     | 18/40 [00:06<00:07,  2.87it/s] 48%|████▊     | 19/40 [00:06<00:07,  2.86it/s] 50%|█████     | 20/40 [00:06<00:06,  2.88it/s] 52%|█████▎    | 21/40 [00:07<00:06,  2.97it/s] 55%|█████▌    | 22/40 [00:07<00:06,  2.99it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.06it/s] 60%|██████    | 24/40 [00:08<00:05,  3.09it/s] 62%|██████▎   | 25/40 [00:08<00:04,  3.02it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.00it/s] 68%|██████▊   | 27/40 [00:09<00:04,  2.90it/s] 70%|███████   | 28/40 [00:09<00:04,  2.80it/s] 72%|███████▎  | 29/40 [00:10<00:04,  2.68it/s] 75%|███████▌  | 30/40 [00:10<00:03,  2.60it/s] 78%|███████▊  | 31/40 [00:10<00:03,  2.54it/s] 80%|████████  | 32/40 [00:11<00:03,  2.50it/s] 82%|████████▎ | 33/40 [00:11<00:02,  2.46it/s] 85%|████████▌ | 34/40 [00:12<00:02,  2.44it/s] 88%|████████▊ | 35/40 [00:12<00:02,  2.42it/s] 90%|█████████ | 36/40 [00:13<00:01,  2.41it/s] 92%|█████████▎| 37/40 [00:13<00:01,  2.41it/s] 95%|█████████▌| 38/40 [00:13<00:00,  2.57it/s] 98%|█████████▊| 39/40 [00:14<00:00,  2.68it/s]100%|██████████| 40/40 [00:14<00:00,  2.67it/s]100%|██████████| 40/40 [00:14<00:00,  2.77it/s]
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age010_pred_sub0.npy has been deleted successfully.
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age010_pred_sub1.npy has been deleted successfully.
+  Spent 1.4 min for evaluation.
+
+--- Start evaluation ---
+  Target age: 450
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:14,  2.78it/s]  5%|▌         | 2/40 [00:00<00:13,  2.82it/s]  8%|▊         | 3/40 [00:01<00:13,  2.81it/s] 10%|█         | 4/40 [00:01<00:13,  2.73it/s] 12%|█▎        | 5/40 [00:01<00:13,  2.64it/s] 15%|█▌        | 6/40 [00:02<00:13,  2.57it/s] 18%|█▊        | 7/40 [00:02<00:13,  2.51it/s] 20%|██        | 8/40 [00:03<00:12,  2.47it/s] 22%|██▎       | 9/40 [00:03<00:12,  2.44it/s] 25%|██▌       | 10/40 [00:03<00:12,  2.42it/s] 28%|██▊       | 11/40 [00:04<00:12,  2.41it/s] 30%|███       | 12/40 [00:04<00:11,  2.52it/s] 32%|███▎      | 13/40 [00:05<00:10,  2.66it/s] 35%|███▌      | 14/40 [00:05<00:09,  2.73it/s] 38%|███▊      | 15/40 [00:05<00:09,  2.71it/s] 40%|████      | 16/40 [00:06<00:08,  2.69it/s] 42%|████▎     | 17/40 [00:06<00:08,  2.67it/s] 45%|████▌     | 18/40 [00:06<00:08,  2.59it/s] 48%|████▊     | 19/40 [00:07<00:08,  2.59it/s] 50%|█████     | 20/40 [00:07<00:07,  2.53it/s] 52%|█████▎    | 21/40 [00:08<00:07,  2.49it/s] 55%|█████▌    | 22/40 [00:08<00:07,  2.46it/s] 57%|█████▊    | 23/40 [00:08<00:06,  2.44it/s] 60%|██████    | 24/40 [00:09<00:06,  2.51it/s] 62%|██████▎   | 25/40 [00:09<00:05,  2.63it/s] 65%|██████▌   | 26/40 [00:10<00:05,  2.71it/s] 68%|██████▊   | 27/40 [00:10<00:04,  2.77it/s] 70%|███████   | 28/40 [00:10<00:04,  2.81it/s] 72%|███████▎  | 29/40 [00:11<00:03,  2.84it/s] 75%|███████▌  | 30/40 [00:11<00:03,  2.86it/s] 78%|███████▊  | 31/40 [00:11<00:03,  2.79it/s] 80%|████████  | 32/40 [00:12<00:02,  2.71it/s] 82%|████████▎ | 33/40 [00:12<00:02,  2.62it/s] 85%|████████▌ | 34/40 [00:13<00:02,  2.54it/s] 88%|████████▊ | 35/40 [00:13<00:02,  2.50it/s] 90%|█████████ | 36/40 [00:13<00:01,  2.46it/s] 92%|█████████▎| 37/40 [00:14<00:01,  2.44it/s] 95%|█████████▌| 38/40 [00:14<00:00,  2.42it/s] 98%|█████████▊| 39/40 [00:15<00:00,  2.51it/s]100%|██████████| 40/40 [00:15<00:00,  2.60it/s]100%|██████████| 40/40 [00:15<00:00,  2.60it/s]
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:14,  2.75it/s]  5%|▌         | 2/40 [00:00<00:13,  2.82it/s]  8%|▊         | 3/40 [00:01<00:13,  2.84it/s] 10%|█         | 4/40 [00:01<00:13,  2.73it/s] 12%|█▎        | 5/40 [00:01<00:13,  2.61it/s] 15%|█▌        | 6/40 [00:02<00:13,  2.53it/s] 18%|█▊        | 7/40 [00:02<00:13,  2.50it/s] 20%|██        | 8/40 [00:03<00:12,  2.61it/s] 22%|██▎       | 9/40 [00:03<00:11,  2.70it/s] 25%|██▌       | 10/40 [00:03<00:10,  2.77it/s] 28%|██▊       | 11/40 [00:04<00:10,  2.81it/s] 30%|███       | 12/40 [00:04<00:10,  2.75it/s] 32%|███▎      | 13/40 [00:04<00:10,  2.67it/s] 35%|███▌      | 14/40 [00:05<00:09,  2.61it/s] 38%|███▊      | 15/40 [00:05<00:09,  2.55it/s] 40%|████      | 16/40 [00:06<00:09,  2.50it/s] 42%|████▎     | 17/40 [00:06<00:09,  2.47it/s] 45%|████▌     | 18/40 [00:06<00:09,  2.44it/s] 48%|████▊     | 19/40 [00:07<00:08,  2.43it/s] 50%|█████     | 20/40 [00:07<00:08,  2.42it/s] 52%|█████▎    | 21/40 [00:08<00:07,  2.41it/s] 55%|█████▌    | 22/40 [00:08<00:07,  2.45it/s] 57%|█████▊    | 23/40 [00:08<00:06,  2.56it/s] 60%|██████    | 24/40 [00:09<00:06,  2.64it/s] 62%|██████▎   | 25/40 [00:09<00:05,  2.59it/s] 65%|██████▌   | 26/40 [00:10<00:05,  2.53it/s] 68%|██████▊   | 27/40 [00:10<00:05,  2.49it/s] 70%|███████   | 28/40 [00:10<00:04,  2.45it/s] 72%|███████▎  | 29/40 [00:11<00:04,  2.45it/s] 75%|███████▌  | 30/40 [00:11<00:03,  2.50it/s] 78%|███████▊  | 31/40 [00:12<00:03,  2.48it/s] 80%|████████  | 32/40 [00:12<00:03,  2.46it/s] 82%|████████▎ | 33/40 [00:12<00:02,  2.49it/s] 85%|████████▌ | 34/40 [00:13<00:02,  2.43it/s] 88%|████████▊ | 35/40 [00:13<00:02,  2.43it/s] 90%|█████████ | 36/40 [00:14<00:01,  2.48it/s] 92%|█████████▎| 37/40 [00:14<00:01,  2.47it/s] 95%|█████████▌| 38/40 [00:14<00:00,  2.42it/s] 98%|█████████▊| 39/40 [00:15<00:00,  2.46it/s]100%|██████████| 40/40 [00:15<00:00,  2.49it/s]100%|██████████| 40/40 [00:15<00:00,  2.53it/s]
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age450_pred_sub0.npy has been deleted successfully.
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age450_pred_sub1.npy has been deleted successfully.
+  Spent 1.4 min for evaluation.
+
+--- Start evaluation ---
+  Target age: 150
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:15,  2.47it/s]  5%|▌         | 2/40 [00:00<00:15,  2.52it/s]  8%|▊         | 3/40 [00:01<00:14,  2.58it/s] 10%|█         | 4/40 [00:01<00:13,  2.61it/s] 12%|█▎        | 5/40 [00:01<00:13,  2.63it/s] 15%|█▌        | 6/40 [00:02<00:12,  2.63it/s] 18%|█▊        | 7/40 [00:02<00:12,  2.61it/s] 20%|██        | 8/40 [00:03<00:12,  2.60it/s] 22%|██▎       | 9/40 [00:03<00:11,  2.60it/s] 25%|██▌       | 10/40 [00:03<00:11,  2.61it/s] 28%|██▊       | 11/40 [00:04<00:11,  2.61it/s] 30%|███       | 12/40 [00:04<00:10,  2.61it/s] 32%|███▎      | 13/40 [00:04<00:10,  2.62it/s] 35%|███▌      | 14/40 [00:05<00:09,  2.63it/s] 38%|███▊      | 15/40 [00:05<00:09,  2.63it/s] 40%|████      | 16/40 [00:06<00:09,  2.64it/s] 42%|████▎     | 17/40 [00:06<00:08,  2.67it/s] 45%|████▌     | 18/40 [00:06<00:07,  2.80it/s] 48%|████▊     | 19/40 [00:07<00:07,  2.82it/s] 50%|█████     | 20/40 [00:07<00:07,  2.81it/s] 52%|█████▎    | 21/40 [00:07<00:06,  2.93it/s] 55%|█████▌    | 22/40 [00:08<00:06,  2.99it/s] 57%|█████▊    | 23/40 [00:08<00:05,  3.02it/s] 60%|██████    | 24/40 [00:08<00:05,  3.08it/s] 62%|██████▎   | 25/40 [00:09<00:04,  3.13it/s] 65%|██████▌   | 26/40 [00:09<00:04,  3.16it/s] 68%|██████▊   | 27/40 [00:09<00:04,  3.17it/s] 70%|███████   | 28/40 [00:10<00:03,  3.16it/s] 72%|███████▎  | 29/40 [00:10<00:03,  3.08it/s] 75%|███████▌  | 30/40 [00:10<00:03,  3.09it/s] 78%|███████▊  | 31/40 [00:11<00:02,  3.06it/s] 80%|████████  | 32/40 [00:11<00:02,  3.10it/s] 82%|████████▎ | 33/40 [00:11<00:02,  3.08it/s] 85%|████████▌ | 34/40 [00:11<00:01,  3.10it/s] 88%|████████▊ | 35/40 [00:12<00:01,  3.03it/s] 90%|█████████ | 36/40 [00:12<00:01,  2.94it/s] 92%|█████████▎| 37/40 [00:13<00:01,  2.99it/s] 95%|█████████▌| 38/40 [00:13<00:00,  3.04it/s] 98%|█████████▊| 39/40 [00:13<00:00,  3.09it/s]100%|██████████| 40/40 [00:13<00:00,  3.13it/s]100%|██████████| 40/40 [00:13<00:00,  2.87it/s]
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:12,  3.05it/s]  5%|▌         | 2/40 [00:00<00:12,  3.15it/s]  8%|▊         | 3/40 [00:00<00:11,  3.19it/s] 10%|█         | 4/40 [00:01<00:11,  3.20it/s] 12%|█▎        | 5/40 [00:01<00:10,  3.21it/s] 15%|█▌        | 6/40 [00:01<00:10,  3.21it/s] 18%|█▊        | 7/40 [00:02<00:10,  3.21it/s] 20%|██        | 8/40 [00:02<00:09,  3.21it/s] 22%|██▎       | 9/40 [00:02<00:09,  3.21it/s] 25%|██▌       | 10/40 [00:03<00:09,  3.22it/s] 28%|██▊       | 11/40 [00:03<00:08,  3.23it/s] 30%|███       | 12/40 [00:03<00:08,  3.21it/s] 32%|███▎      | 13/40 [00:04<00:08,  3.22it/s] 35%|███▌      | 14/40 [00:04<00:08,  3.22it/s] 38%|███▊      | 15/40 [00:04<00:07,  3.22it/s] 40%|████      | 16/40 [00:04<00:07,  3.22it/s] 42%|████▎     | 17/40 [00:05<00:07,  3.23it/s] 45%|████▌     | 18/40 [00:05<00:06,  3.23it/s] 48%|████▊     | 19/40 [00:05<00:06,  3.23it/s] 50%|█████     | 20/40 [00:06<00:06,  3.22it/s] 52%|█████▎    | 21/40 [00:06<00:05,  3.22it/s] 55%|█████▌    | 22/40 [00:06<00:05,  3.22it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.23it/s] 60%|██████    | 24/40 [00:07<00:04,  3.21it/s] 62%|██████▎   | 25/40 [00:07<00:04,  3.22it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.22it/s] 68%|██████▊   | 27/40 [00:08<00:04,  3.23it/s] 70%|███████   | 28/40 [00:08<00:03,  3.22it/s] 72%|███████▎  | 29/40 [00:09<00:03,  3.22it/s] 75%|███████▌  | 30/40 [00:09<00:03,  3.22it/s] 78%|███████▊  | 31/40 [00:09<00:02,  3.22it/s] 80%|████████  | 32/40 [00:09<00:02,  3.22it/s] 82%|████████▎ | 33/40 [00:10<00:02,  3.22it/s] 85%|████████▌ | 34/40 [00:10<00:01,  3.22it/s] 88%|████████▊ | 35/40 [00:10<00:01,  3.22it/s] 90%|█████████ | 36/40 [00:11<00:01,  3.21it/s] 92%|█████████▎| 37/40 [00:11<00:00,  3.22it/s] 95%|█████████▌| 38/40 [00:11<00:00,  3.22it/s] 98%|█████████▊| 39/40 [00:12<00:00,  3.22it/s]100%|██████████| 40/40 [00:12<00:00,  3.22it/s]100%|██████████| 40/40 [00:12<00:00,  3.22it/s]
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age150_pred_sub0.npy has been deleted successfully.
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age150_pred_sub1.npy has been deleted successfully.
+  Spent 1.3 min for evaluation.
+
+--- Start evaluation ---
+  Target age: 020
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:12,  3.05it/s]  5%|▌         | 2/40 [00:00<00:12,  3.15it/s]  8%|▊         | 3/40 [00:00<00:11,  3.19it/s] 10%|█         | 4/40 [00:01<00:11,  3.19it/s] 12%|█▎        | 5/40 [00:01<00:10,  3.21it/s] 15%|█▌        | 6/40 [00:01<00:10,  3.22it/s] 18%|█▊        | 7/40 [00:02<00:10,  3.22it/s] 20%|██        | 8/40 [00:02<00:09,  3.23it/s] 22%|██▎       | 9/40 [00:02<00:09,  3.23it/s] 25%|██▌       | 10/40 [00:03<00:09,  3.23it/s] 28%|██▊       | 11/40 [00:03<00:08,  3.23it/s] 30%|███       | 12/40 [00:03<00:08,  3.21it/s] 32%|███▎      | 13/40 [00:04<00:08,  3.22it/s] 35%|███▌      | 14/40 [00:04<00:08,  3.22it/s] 38%|███▊      | 15/40 [00:04<00:07,  3.22it/s] 40%|████      | 16/40 [00:04<00:07,  3.22it/s] 42%|████▎     | 17/40 [00:05<00:07,  3.22it/s] 45%|████▌     | 18/40 [00:05<00:06,  3.22it/s] 48%|████▊     | 19/40 [00:05<00:06,  3.22it/s] 50%|█████     | 20/40 [00:06<00:06,  3.21it/s] 52%|█████▎    | 21/40 [00:06<00:05,  3.22it/s] 55%|█████▌    | 22/40 [00:06<00:05,  3.21it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.21it/s] 60%|██████    | 24/40 [00:07<00:04,  3.22it/s] 62%|██████▎   | 25/40 [00:07<00:04,  3.22it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.17it/s] 68%|██████▊   | 27/40 [00:08<00:04,  3.19it/s] 70%|███████   | 28/40 [00:08<00:03,  3.18it/s] 72%|███████▎  | 29/40 [00:09<00:03,  3.20it/s] 75%|███████▌  | 30/40 [00:09<00:03,  3.20it/s] 78%|███████▊  | 31/40 [00:09<00:02,  3.21it/s] 80%|████████  | 32/40 [00:09<00:02,  3.22it/s] 82%|████████▎ | 33/40 [00:10<00:02,  3.22it/s] 85%|████████▌ | 34/40 [00:10<00:01,  3.23it/s] 88%|████████▊ | 35/40 [00:10<00:01,  3.23it/s] 90%|█████████ | 36/40 [00:11<00:01,  3.22it/s] 92%|█████████▎| 37/40 [00:11<00:00,  3.22it/s] 95%|█████████▌| 38/40 [00:11<00:00,  3.22it/s] 98%|█████████▊| 39/40 [00:12<00:00,  3.22it/s]100%|██████████| 40/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.21it/s]
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:12,  3.12it/s]  5%|▌         | 2/40 [00:00<00:12,  3.13it/s]  8%|▊         | 3/40 [00:00<00:11,  3.17it/s] 10%|█         | 4/40 [00:01<00:11,  3.18it/s] 12%|█▎        | 5/40 [00:01<00:10,  3.19it/s] 15%|█▌        | 6/40 [00:01<00:10,  3.20it/s] 18%|█▊        | 7/40 [00:02<00:10,  3.21it/s] 20%|██        | 8/40 [00:02<00:09,  3.22it/s] 22%|██▎       | 9/40 [00:02<00:09,  3.22it/s] 25%|██▌       | 10/40 [00:03<00:09,  3.23it/s] 28%|██▊       | 11/40 [00:03<00:08,  3.22it/s] 30%|███       | 12/40 [00:03<00:08,  3.22it/s] 32%|███▎      | 13/40 [00:04<00:08,  3.22it/s] 35%|███▌      | 14/40 [00:04<00:08,  3.22it/s] 38%|███▊      | 15/40 [00:04<00:07,  3.23it/s] 40%|████      | 16/40 [00:04<00:07,  3.23it/s] 42%|████▎     | 17/40 [00:05<00:07,  3.23it/s] 45%|████▌     | 18/40 [00:05<00:06,  3.23it/s] 48%|████▊     | 19/40 [00:05<00:06,  3.22it/s] 50%|█████     | 20/40 [00:06<00:06,  3.22it/s] 52%|█████▎    | 21/40 [00:06<00:05,  3.22it/s] 55%|█████▌    | 22/40 [00:06<00:05,  3.22it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.22it/s] 60%|██████    | 24/40 [00:07<00:04,  3.23it/s] 62%|██████▎   | 25/40 [00:07<00:04,  3.23it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.23it/s] 68%|██████▊   | 27/40 [00:08<00:04,  3.23it/s] 70%|███████   | 28/40 [00:08<00:03,  3.21it/s] 72%|███████▎  | 29/40 [00:09<00:03,  3.22it/s] 75%|███████▌  | 30/40 [00:09<00:03,  3.21it/s] 78%|███████▊  | 31/40 [00:09<00:02,  3.22it/s] 80%|████████  | 32/40 [00:09<00:02,  3.22it/s] 82%|████████▎ | 33/40 [00:10<00:02,  3.23it/s] 85%|████████▌ | 34/40 [00:10<00:01,  3.23it/s] 88%|████████▊ | 35/40 [00:10<00:01,  3.23it/s] 90%|█████████ | 36/40 [00:11<00:01,  3.22it/s] 92%|█████████▎| 37/40 [00:11<00:00,  3.22it/s] 95%|█████████▌| 38/40 [00:11<00:00,  3.22it/s] 98%|█████████▊| 39/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.22it/s]
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age020_pred_sub0.npy has been deleted successfully.
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age020_pred_sub1.npy has been deleted successfully.
+  Spent 1.1 min for evaluation.
+
+--- Start evaluation ---
+  Target age: 300
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:12,  3.15it/s]  5%|▌         | 2/40 [00:00<00:11,  3.17it/s]  8%|▊         | 3/40 [00:00<00:11,  3.20it/s] 10%|█         | 4/40 [00:01<00:11,  3.20it/s] 12%|█▎        | 5/40 [00:01<00:10,  3.21it/s] 15%|█▌        | 6/40 [00:01<00:10,  3.21it/s] 18%|█▊        | 7/40 [00:02<00:10,  3.22it/s] 20%|██        | 8/40 [00:02<00:09,  3.22it/s] 22%|██▎       | 9/40 [00:02<00:09,  3.22it/s] 25%|██▌       | 10/40 [00:03<00:09,  3.23it/s] 28%|██▊       | 11/40 [00:03<00:08,  3.23it/s] 30%|███       | 12/40 [00:03<00:08,  3.21it/s] 32%|███▎      | 13/40 [00:04<00:08,  3.22it/s] 35%|███▌      | 14/40 [00:04<00:08,  3.22it/s] 38%|███▊      | 15/40 [00:04<00:07,  3.22it/s] 40%|████      | 16/40 [00:04<00:07,  3.23it/s] 42%|████▎     | 17/40 [00:05<00:07,  3.23it/s] 45%|████▌     | 18/40 [00:05<00:06,  3.23it/s] 48%|████▊     | 19/40 [00:05<00:06,  3.23it/s] 50%|█████     | 20/40 [00:06<00:06,  3.22it/s] 52%|█████▎    | 21/40 [00:06<00:05,  3.22it/s] 55%|█████▌    | 22/40 [00:06<00:05,  3.22it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.22it/s] 60%|██████    | 24/40 [00:07<00:04,  3.23it/s] 62%|██████▎   | 25/40 [00:07<00:04,  3.21it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.22it/s] 68%|██████▊   | 27/40 [00:08<00:04,  3.22it/s] 70%|███████   | 28/40 [00:08<00:03,  3.22it/s] 72%|███████▎  | 29/40 [00:09<00:03,  3.22it/s] 75%|███████▌  | 30/40 [00:09<00:03,  3.22it/s] 78%|███████▊  | 31/40 [00:09<00:02,  3.22it/s] 80%|████████  | 32/40 [00:09<00:02,  3.22it/s] 82%|████████▎ | 33/40 [00:10<00:02,  3.22it/s] 85%|████████▌ | 34/40 [00:10<00:01,  3.22it/s] 88%|████████▊ | 35/40 [00:10<00:01,  3.23it/s] 90%|█████████ | 36/40 [00:11<00:01,  3.22it/s] 92%|█████████▎| 37/40 [00:11<00:00,  3.22it/s] 95%|█████████▌| 38/40 [00:11<00:00,  3.22it/s] 98%|█████████▊| 39/40 [00:12<00:00,  3.22it/s]100%|██████████| 40/40 [00:12<00:00,  3.22it/s]100%|██████████| 40/40 [00:12<00:00,  3.22it/s]
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:12,  3.06it/s]  5%|▌         | 2/40 [00:00<00:12,  3.15it/s]  8%|▊         | 3/40 [00:00<00:11,  3.18it/s] 10%|█         | 4/40 [00:01<00:11,  3.19it/s] 12%|█▎        | 5/40 [00:01<00:10,  3.21it/s] 15%|█▌        | 6/40 [00:01<00:10,  3.21it/s] 18%|█▊        | 7/40 [00:02<00:10,  3.21it/s] 20%|██        | 8/40 [00:02<00:09,  3.22it/s] 22%|██▎       | 9/40 [00:02<00:09,  3.22it/s] 25%|██▌       | 10/40 [00:03<00:09,  3.22it/s] 28%|██▊       | 11/40 [00:03<00:08,  3.22it/s] 30%|███       | 12/40 [00:03<00:08,  3.22it/s] 32%|███▎      | 13/40 [00:04<00:08,  3.23it/s] 35%|███▌      | 14/40 [00:04<00:08,  3.22it/s] 38%|███▊      | 15/40 [00:04<00:07,  3.23it/s] 40%|████      | 16/40 [00:04<00:07,  3.23it/s] 42%|████▎     | 17/40 [00:05<00:07,  3.23it/s] 45%|████▌     | 18/40 [00:05<00:06,  3.23it/s] 48%|████▊     | 19/40 [00:05<00:06,  3.23it/s] 50%|█████     | 20/40 [00:06<00:06,  3.23it/s] 52%|█████▎    | 21/40 [00:06<00:05,  3.21it/s] 55%|█████▌    | 22/40 [00:06<00:05,  3.22it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.22it/s] 60%|██████    | 24/40 [00:07<00:04,  3.23it/s] 62%|██████▎   | 25/40 [00:07<00:04,  3.23it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.23it/s] 68%|██████▊   | 27/40 [00:08<00:04,  3.23it/s] 70%|███████   | 28/40 [00:08<00:03,  3.22it/s] 72%|███████▎  | 29/40 [00:09<00:03,  3.23it/s] 75%|███████▌  | 30/40 [00:09<00:03,  3.23it/s] 78%|███████▊  | 31/40 [00:09<00:02,  3.23it/s] 80%|████████  | 32/40 [00:09<00:02,  3.23it/s] 82%|████████▎ | 33/40 [00:10<00:02,  3.23it/s] 85%|████████▌ | 34/40 [00:10<00:01,  3.23it/s] 88%|████████▊ | 35/40 [00:10<00:01,  3.23it/s] 90%|█████████ | 36/40 [00:11<00:01,  3.21it/s] 92%|█████████▎| 37/40 [00:11<00:00,  3.22it/s] 95%|█████████▌| 38/40 [00:11<00:00,  3.22it/s] 98%|█████████▊| 39/40 [00:12<00:00,  3.22it/s]100%|██████████| 40/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.22it/s]
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age300_pred_sub0.npy has been deleted successfully.
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age300_pred_sub1.npy has been deleted successfully.
+  Spent 1.2 min for evaluation.
+
+--- Start evaluation ---
+  Target age: 070
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:12,  3.13it/s]  5%|▌         | 2/40 [00:00<00:11,  3.19it/s]  8%|▊         | 3/40 [00:00<00:11,  3.21it/s] 10%|█         | 4/40 [00:01<00:11,  3.20it/s] 12%|█▎        | 5/40 [00:01<00:10,  3.21it/s] 15%|█▌        | 6/40 [00:01<00:10,  3.21it/s] 18%|█▊        | 7/40 [00:02<00:10,  3.22it/s] 20%|██        | 8/40 [00:02<00:09,  3.22it/s] 22%|██▎       | 9/40 [00:02<00:09,  3.22it/s] 25%|██▌       | 10/40 [00:03<00:09,  3.22it/s] 28%|██▊       | 11/40 [00:03<00:08,  3.22it/s] 30%|███       | 12/40 [00:03<00:08,  3.22it/s] 32%|███▎      | 13/40 [00:04<00:08,  3.22it/s] 35%|███▌      | 14/40 [00:04<00:08,  3.22it/s] 38%|███▊      | 15/40 [00:04<00:07,  3.23it/s] 40%|████      | 16/40 [00:04<00:07,  3.23it/s] 42%|████▎     | 17/40 [00:05<00:07,  3.23it/s] 45%|████▌     | 18/40 [00:05<00:06,  3.23it/s] 48%|████▊     | 19/40 [00:05<00:06,  3.23it/s] 50%|█████     | 20/40 [00:06<00:06,  3.22it/s] 52%|█████▎    | 21/40 [00:06<00:05,  3.23it/s] 55%|█████▌    | 22/40 [00:06<00:05,  3.22it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.23it/s] 60%|██████    | 24/40 [00:07<00:04,  3.23it/s] 62%|██████▎   | 25/40 [00:07<00:04,  3.23it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.23it/s] 68%|██████▊   | 27/40 [00:08<00:04,  3.23it/s] 70%|███████   | 28/40 [00:08<00:03,  3.21it/s] 72%|███████▎  | 29/40 [00:09<00:03,  3.22it/s] 75%|███████▌  | 30/40 [00:09<00:03,  3.22it/s] 78%|███████▊  | 31/40 [00:09<00:02,  3.23it/s] 80%|████████  | 32/40 [00:09<00:02,  3.23it/s] 82%|████████▎ | 33/40 [00:10<00:02,  3.23it/s] 85%|████████▌ | 34/40 [00:10<00:01,  3.23it/s] 88%|████████▊ | 35/40 [00:10<00:01,  3.23it/s] 90%|█████████ | 36/40 [00:11<00:01,  3.23it/s] 92%|█████████▎| 37/40 [00:11<00:00,  3.22it/s] 95%|█████████▌| 38/40 [00:11<00:00,  3.23it/s] 98%|█████████▊| 39/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.22it/s]
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:12,  3.05it/s]  5%|▌         | 2/40 [00:00<00:12,  3.15it/s]  8%|▊         | 3/40 [00:00<00:11,  3.19it/s] 10%|█         | 4/40 [00:01<00:11,  3.19it/s] 12%|█▎        | 5/40 [00:01<00:10,  3.20it/s] 15%|█▌        | 6/40 [00:01<00:10,  3.21it/s] 18%|█▊        | 7/40 [00:02<00:10,  3.22it/s] 20%|██        | 8/40 [00:02<00:09,  3.22it/s] 22%|██▎       | 9/40 [00:02<00:09,  3.23it/s] 25%|██▌       | 10/40 [00:03<00:09,  3.23it/s] 28%|██▊       | 11/40 [00:03<00:08,  3.23it/s] 30%|███       | 12/40 [00:03<00:08,  3.23it/s] 32%|███▎      | 13/40 [00:04<00:08,  3.23it/s] 35%|███▌      | 14/40 [00:04<00:08,  3.23it/s] 38%|███▊      | 15/40 [00:04<00:07,  3.23it/s] 40%|████      | 16/40 [00:04<00:07,  3.23it/s] 42%|████▎     | 17/40 [00:05<00:07,  3.23it/s] 45%|████▌     | 18/40 [00:05<00:06,  3.23it/s] 48%|████▊     | 19/40 [00:05<00:06,  3.23it/s] 50%|█████     | 20/40 [00:06<00:06,  3.22it/s] 52%|█████▎    | 21/40 [00:06<00:05,  3.23it/s] 55%|█████▌    | 22/40 [00:06<00:05,  3.22it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.23it/s] 60%|██████    | 24/40 [00:07<00:04,  3.23it/s] 62%|██████▎   | 25/40 [00:07<00:04,  3.23it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.23it/s] 68%|██████▊   | 27/40 [00:08<00:04,  3.23it/s] 70%|███████   | 28/40 [00:08<00:03,  3.23it/s] 72%|███████▎  | 29/40 [00:08<00:03,  3.23it/s] 75%|███████▌  | 30/40 [00:09<00:03,  3.23it/s] 78%|███████▊  | 31/40 [00:09<00:02,  3.23it/s] 80%|████████  | 32/40 [00:09<00:02,  3.23it/s] 82%|████████▎ | 33/40 [00:10<00:02,  3.23it/s] 85%|████████▌ | 34/40 [00:10<00:01,  3.23it/s] 88%|████████▊ | 35/40 [00:10<00:01,  3.23it/s] 90%|█████████ | 36/40 [00:11<00:01,  3.22it/s] 92%|█████████▎| 37/40 [00:11<00:00,  3.22it/s] 95%|█████████▌| 38/40 [00:11<00:00,  3.22it/s] 98%|█████████▊| 39/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.22it/s]
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age070_pred_sub0.npy has been deleted successfully.
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age070_pred_sub1.npy has been deleted successfully.
+  Spent 1.1 min for evaluation.
+
+--- Start evaluation ---
+  Target age: 200
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:12,  3.11it/s]  5%|▌         | 2/40 [00:00<00:11,  3.18it/s]  8%|▊         | 3/40 [00:00<00:11,  3.20it/s] 10%|█         | 4/40 [00:01<00:11,  3.21it/s] 12%|█▎        | 5/40 [00:01<00:10,  3.22it/s] 15%|█▌        | 6/40 [00:01<00:10,  3.22it/s] 18%|█▊        | 7/40 [00:02<00:10,  3.23it/s] 20%|██        | 8/40 [00:02<00:09,  3.23it/s] 22%|██▎       | 9/40 [00:02<00:09,  3.23it/s] 25%|██▌       | 10/40 [00:03<00:09,  3.23it/s] 28%|██▊       | 11/40 [00:03<00:08,  3.23it/s] 30%|███       | 12/40 [00:03<00:08,  3.22it/s] 32%|███▎      | 13/40 [00:04<00:08,  3.23it/s] 35%|███▌      | 14/40 [00:04<00:08,  3.22it/s] 38%|███▊      | 15/40 [00:04<00:07,  3.23it/s] 40%|████      | 16/40 [00:04<00:07,  3.23it/s] 42%|████▎     | 17/40 [00:05<00:07,  3.23it/s] 45%|████▌     | 18/40 [00:05<00:06,  3.23it/s] 48%|████▊     | 19/40 [00:05<00:06,  3.23it/s] 50%|█████     | 20/40 [00:06<00:06,  3.22it/s] 52%|█████▎    | 21/40 [00:06<00:05,  3.22it/s] 55%|█████▌    | 22/40 [00:06<00:05,  3.22it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.22it/s] 60%|██████    | 24/40 [00:07<00:04,  3.23it/s] 62%|██████▎   | 25/40 [00:07<00:04,  3.23it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.23it/s] 68%|██████▊   | 27/40 [00:08<00:04,  3.24it/s] 70%|███████   | 28/40 [00:08<00:03,  3.22it/s] 72%|███████▎  | 29/40 [00:08<00:03,  3.23it/s] 75%|███████▌  | 30/40 [00:09<00:03,  3.23it/s] 78%|███████▊  | 31/40 [00:09<00:02,  3.23it/s] 80%|████████  | 32/40 [00:09<00:02,  3.23it/s] 82%|████████▎ | 33/40 [00:10<00:02,  3.23it/s] 85%|████████▌ | 34/40 [00:10<00:01,  3.23it/s] 88%|████████▊ | 35/40 [00:10<00:01,  3.23it/s] 90%|█████████ | 36/40 [00:11<00:01,  3.23it/s] 92%|█████████▎| 37/40 [00:11<00:00,  3.23it/s] 95%|█████████▌| 38/40 [00:11<00:00,  3.23it/s] 98%|█████████▊| 39/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.23it/s]
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:12,  3.07it/s]  5%|▌         | 2/40 [00:00<00:11,  3.17it/s]  8%|▊         | 3/40 [00:00<00:11,  3.19it/s] 10%|█         | 4/40 [00:01<00:11,  3.20it/s] 12%|█▎        | 5/40 [00:01<00:10,  3.21it/s] 15%|█▌        | 6/40 [00:01<00:10,  3.21it/s] 18%|█▊        | 7/40 [00:02<00:10,  3.22it/s] 20%|██        | 8/40 [00:02<00:09,  3.23it/s] 22%|██▎       | 9/40 [00:02<00:09,  3.23it/s] 25%|██▌       | 10/40 [00:03<00:09,  3.23it/s] 28%|██▊       | 11/40 [00:03<00:08,  3.23it/s] 30%|███       | 12/40 [00:03<00:08,  3.21it/s] 32%|███▎      | 13/40 [00:04<00:08,  3.22it/s] 35%|███▌      | 14/40 [00:04<00:08,  3.22it/s] 38%|███▊      | 15/40 [00:04<00:07,  3.23it/s] 40%|████      | 16/40 [00:04<00:07,  3.22it/s] 42%|████▎     | 17/40 [00:05<00:07,  3.22it/s] 45%|████▌     | 18/40 [00:05<00:06,  3.23it/s] 48%|████▊     | 19/40 [00:05<00:06,  3.23it/s] 50%|█████     | 20/40 [00:06<00:06,  3.22it/s] 52%|█████▎    | 21/40 [00:06<00:05,  3.22it/s] 55%|█████▌    | 22/40 [00:06<00:05,  3.22it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.23it/s] 60%|██████    | 24/40 [00:07<00:04,  3.23it/s] 62%|██████▎   | 25/40 [00:07<00:04,  3.23it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.23it/s] 68%|██████▊   | 27/40 [00:08<00:04,  2.78it/s] 70%|███████   | 28/40 [00:08<00:04,  2.88it/s] 72%|███████▎  | 29/40 [00:09<00:03,  2.98it/s] 75%|███████▌  | 30/40 [00:09<00:03,  3.05it/s] 78%|███████▊  | 31/40 [00:09<00:02,  3.10it/s] 80%|████████  | 32/40 [00:10<00:02,  3.14it/s] 82%|████████▎ | 33/40 [00:10<00:02,  3.17it/s] 85%|████████▌ | 34/40 [00:10<00:01,  3.19it/s] 88%|████████▊ | 35/40 [00:11<00:01,  3.20it/s] 90%|█████████ | 36/40 [00:11<00:01,  3.20it/s] 92%|█████████▎| 37/40 [00:11<00:00,  3.21it/s] 95%|█████████▌| 38/40 [00:11<00:00,  3.21it/s] 98%|█████████▊| 39/40 [00:12<00:00,  3.22it/s]100%|██████████| 40/40 [00:12<00:00,  3.22it/s]100%|██████████| 40/40 [00:12<00:00,  3.18it/s]
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age200_pred_sub0.npy has been deleted successfully.
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age200_pred_sub1.npy has been deleted successfully.
+  Spent 1.2 min for evaluation.
+
+--- Start evaluation ---
+  Target age: 350
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:12,  3.12it/s]  5%|▌         | 2/40 [00:00<00:12,  3.12it/s]  8%|▊         | 3/40 [00:00<00:11,  3.17it/s] 10%|█         | 4/40 [00:01<00:11,  3.15it/s] 12%|█▎        | 5/40 [00:01<00:11,  3.17it/s] 15%|█▌        | 6/40 [00:01<00:10,  3.19it/s] 18%|█▊        | 7/40 [00:02<00:10,  3.20it/s] 20%|██        | 8/40 [00:02<00:09,  3.21it/s] 22%|██▎       | 9/40 [00:02<00:09,  3.21it/s] 25%|██▌       | 10/40 [00:03<00:09,  3.22it/s] 28%|██▊       | 11/40 [00:03<00:09,  3.22it/s] 30%|███       | 12/40 [00:03<00:08,  3.22it/s] 32%|███▎      | 13/40 [00:04<00:08,  3.22it/s] 35%|███▌      | 14/40 [00:04<00:08,  3.21it/s] 38%|███▊      | 15/40 [00:04<00:07,  3.22it/s] 40%|████      | 16/40 [00:04<00:07,  3.22it/s] 42%|████▎     | 17/40 [00:05<00:07,  3.23it/s] 45%|████▌     | 18/40 [00:05<00:06,  3.23it/s] 48%|████▊     | 19/40 [00:05<00:06,  3.23it/s] 50%|█████     | 20/40 [00:06<00:06,  3.22it/s] 52%|█████▎    | 21/40 [00:06<00:05,  3.22it/s] 55%|█████▌    | 22/40 [00:06<00:05,  3.22it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.22it/s] 60%|██████    | 24/40 [00:07<00:04,  3.23it/s] 62%|██████▎   | 25/40 [00:07<00:04,  3.23it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.23it/s] 68%|██████▊   | 27/40 [00:08<00:04,  3.23it/s] 70%|███████   | 28/40 [00:08<00:03,  3.21it/s] 72%|███████▎  | 29/40 [00:09<00:03,  3.22it/s] 75%|███████▌  | 30/40 [00:09<00:03,  3.22it/s] 78%|███████▊  | 31/40 [00:09<00:02,  3.22it/s] 80%|████████  | 32/40 [00:09<00:02,  3.22it/s] 82%|████████▎ | 33/40 [00:10<00:02,  3.22it/s] 85%|████████▌ | 34/40 [00:10<00:01,  3.23it/s] 88%|████████▊ | 35/40 [00:10<00:01,  3.23it/s] 90%|█████████ | 36/40 [00:11<00:01,  3.22it/s] 92%|█████████▎| 37/40 [00:11<00:00,  3.22it/s] 95%|█████████▌| 38/40 [00:11<00:00,  3.22it/s] 98%|█████████▊| 39/40 [00:12<00:00,  3.22it/s]100%|██████████| 40/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.22it/s]
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:12,  3.10it/s]  5%|▌         | 2/40 [00:00<00:11,  3.18it/s]  8%|▊         | 3/40 [00:00<00:11,  3.20it/s] 10%|█         | 4/40 [00:01<00:11,  3.19it/s] 12%|█▎        | 5/40 [00:01<00:10,  3.21it/s] 15%|█▌        | 6/40 [00:01<00:10,  3.21it/s] 18%|█▊        | 7/40 [00:02<00:10,  3.22it/s] 20%|██        | 8/40 [00:02<00:10,  3.13it/s] 22%|██▎       | 9/40 [00:02<00:09,  3.16it/s] 25%|██▌       | 10/40 [00:03<00:09,  3.17it/s] 28%|██▊       | 11/40 [00:03<00:09,  3.19it/s] 30%|███       | 12/40 [00:03<00:08,  3.20it/s] 32%|███▎      | 13/40 [00:04<00:08,  3.21it/s] 35%|███▌      | 14/40 [00:04<00:08,  3.21it/s] 38%|███▊      | 15/40 [00:04<00:07,  3.22it/s] 40%|████      | 16/40 [00:05<00:07,  3.22it/s] 42%|████▎     | 17/40 [00:05<00:07,  3.23it/s] 45%|████▌     | 18/40 [00:05<00:06,  3.23it/s] 48%|████▊     | 19/40 [00:05<00:06,  3.23it/s] 50%|█████     | 20/40 [00:06<00:06,  3.23it/s] 52%|█████▎    | 21/40 [00:06<00:05,  3.23it/s] 55%|█████▌    | 22/40 [00:06<00:05,  3.23it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.23it/s] 60%|██████    | 24/40 [00:07<00:04,  3.23it/s] 62%|██████▎   | 25/40 [00:07<00:04,  3.23it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.23it/s] 68%|██████▊   | 27/40 [00:08<00:04,  3.23it/s] 70%|███████   | 28/40 [00:08<00:03,  3.22it/s] 72%|███████▎  | 29/40 [00:09<00:03,  3.22it/s] 75%|███████▌  | 30/40 [00:09<00:03,  3.23it/s] 78%|███████▊  | 31/40 [00:09<00:02,  3.23it/s] 80%|████████  | 32/40 [00:09<00:02,  3.23it/s] 82%|████████▎ | 33/40 [00:10<00:02,  3.23it/s] 85%|████████▌ | 34/40 [00:10<00:01,  3.23it/s] 88%|████████▊ | 35/40 [00:10<00:01,  3.23it/s] 90%|█████████ | 36/40 [00:11<00:01,  3.23it/s] 92%|█████████▎| 37/40 [00:11<00:00,  3.23it/s] 95%|█████████▌| 38/40 [00:11<00:00,  3.22it/s] 98%|█████████▊| 39/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.22it/s]
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age350_pred_sub0.npy has been deleted successfully.
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age350_pred_sub1.npy has been deleted successfully.
+  Spent 1.1 min for evaluation.
+
+--- Start evaluation ---
+  Target age: 030
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:12,  3.11it/s]  5%|▌         | 2/40 [00:00<00:11,  3.17it/s]  8%|▊         | 3/40 [00:00<00:11,  3.20it/s] 10%|█         | 4/40 [00:01<00:11,  3.20it/s] 12%|█▎        | 5/40 [00:01<00:10,  3.21it/s] 15%|█▌        | 6/40 [00:01<00:10,  3.21it/s] 18%|█▊        | 7/40 [00:02<00:10,  3.22it/s] 20%|██        | 8/40 [00:02<00:09,  3.22it/s] 22%|██▎       | 9/40 [00:02<00:09,  3.22it/s] 25%|██▌       | 10/40 [00:03<00:09,  3.23it/s] 28%|██▊       | 11/40 [00:03<00:08,  3.23it/s] 30%|███       | 12/40 [00:03<00:08,  3.22it/s] 32%|███▎      | 13/40 [00:04<00:08,  3.22it/s] 35%|███▌      | 14/40 [00:04<00:08,  3.23it/s] 38%|███▊      | 15/40 [00:04<00:07,  3.22it/s] 40%|████      | 16/40 [00:04<00:07,  3.22it/s] 42%|████▎     | 17/40 [00:05<00:07,  3.23it/s] 45%|████▌     | 18/40 [00:05<00:06,  3.23it/s] 48%|████▊     | 19/40 [00:05<00:06,  3.23it/s] 50%|█████     | 20/40 [00:06<00:06,  3.22it/s] 52%|█████▎    | 21/40 [00:06<00:05,  3.22it/s] 55%|█████▌    | 22/40 [00:06<00:05,  3.22it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.23it/s] 60%|██████    | 24/40 [00:07<00:04,  3.23it/s] 62%|██████▎   | 25/40 [00:07<00:04,  3.23it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.22it/s] 68%|██████▊   | 27/40 [00:08<00:04,  3.22it/s] 70%|███████   | 28/40 [00:08<00:03,  3.22it/s] 72%|███████▎  | 29/40 [00:09<00:03,  3.23it/s] 75%|███████▌  | 30/40 [00:09<00:03,  3.23it/s] 78%|███████▊  | 31/40 [00:09<00:02,  3.23it/s] 80%|████████  | 32/40 [00:09<00:02,  3.23it/s] 82%|████████▎ | 33/40 [00:10<00:02,  3.23it/s] 85%|████████▌ | 34/40 [00:10<00:01,  3.23it/s] 88%|████████▊ | 35/40 [00:10<00:01,  3.23it/s] 90%|█████████ | 36/40 [00:11<00:01,  3.22it/s] 92%|█████████▎| 37/40 [00:11<00:00,  3.23it/s] 95%|█████████▌| 38/40 [00:11<00:00,  3.23it/s] 98%|█████████▊| 39/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.22it/s]
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:12,  3.04it/s]  5%|▌         | 2/40 [00:00<00:12,  3.15it/s]  8%|▊         | 3/40 [00:00<00:11,  3.19it/s] 10%|█         | 4/40 [00:01<00:11,  3.19it/s] 12%|█▎        | 5/40 [00:01<00:10,  3.21it/s] 15%|█▌        | 6/40 [00:01<00:10,  3.21it/s] 18%|█▊        | 7/40 [00:02<00:10,  3.22it/s] 20%|██        | 8/40 [00:02<00:09,  3.23it/s] 22%|██▎       | 9/40 [00:02<00:09,  3.23it/s] 25%|██▌       | 10/40 [00:03<00:09,  3.23it/s] 28%|██▊       | 11/40 [00:03<00:08,  3.23it/s] 30%|███       | 12/40 [00:03<00:08,  3.22it/s] 32%|███▎      | 13/40 [00:04<00:08,  3.22it/s] 35%|███▌      | 14/40 [00:04<00:08,  3.22it/s] 38%|███▊      | 15/40 [00:04<00:07,  3.22it/s] 40%|████      | 16/40 [00:04<00:07,  3.23it/s] 42%|████▎     | 17/40 [00:05<00:07,  3.23it/s] 45%|████▌     | 18/40 [00:05<00:06,  3.23it/s] 48%|████▊     | 19/40 [00:05<00:06,  3.23it/s] 50%|█████     | 20/40 [00:06<00:06,  3.22it/s] 52%|█████▎    | 21/40 [00:06<00:05,  3.23it/s] 55%|█████▌    | 22/40 [00:06<00:05,  3.23it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.23it/s] 60%|██████    | 24/40 [00:07<00:04,  3.23it/s] 62%|██████▎   | 25/40 [00:07<00:04,  3.23it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.23it/s] 68%|██████▊   | 27/40 [00:08<00:04,  3.23it/s] 70%|███████   | 28/40 [00:08<00:03,  3.21it/s] 72%|███████▎  | 29/40 [00:09<00:03,  3.21it/s] 75%|███████▌  | 30/40 [00:09<00:03,  3.22it/s] 78%|███████▊  | 31/40 [00:09<00:02,  3.22it/s] 80%|████████  | 32/40 [00:09<00:02,  3.22it/s] 82%|████████▎ | 33/40 [00:10<00:02,  3.23it/s] 85%|████████▌ | 34/40 [00:10<00:01,  3.23it/s] 88%|████████▊ | 35/40 [00:10<00:01,  3.23it/s] 90%|█████████ | 36/40 [00:11<00:01,  3.21it/s] 92%|█████████▎| 37/40 [00:11<00:00,  3.22it/s] 95%|█████████▌| 38/40 [00:11<00:00,  3.22it/s] 98%|█████████▊| 39/40 [00:12<00:00,  3.22it/s]100%|██████████| 40/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.22it/s]
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age030_pred_sub0.npy has been deleted successfully.
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age030_pred_sub1.npy has been deleted successfully.
+  Spent 1.1 min for evaluation.
+
+--- Start evaluation ---
+  Target age: 250
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:12,  3.05it/s]  5%|▌         | 2/40 [00:00<00:12,  3.15it/s]  8%|▊         | 3/40 [00:00<00:11,  3.13it/s] 10%|█         | 4/40 [00:01<00:11,  3.16it/s] 12%|█▎        | 5/40 [00:01<00:10,  3.19it/s] 15%|█▌        | 6/40 [00:01<00:10,  3.20it/s] 18%|█▊        | 7/40 [00:02<00:10,  3.21it/s] 20%|██        | 8/40 [00:02<00:09,  3.22it/s] 22%|██▎       | 9/40 [00:02<00:09,  3.22it/s] 25%|██▌       | 10/40 [00:03<00:09,  3.23it/s] 28%|██▊       | 11/40 [00:03<00:08,  3.23it/s] 30%|███       | 12/40 [00:03<00:08,  3.22it/s] 32%|███▎      | 13/40 [00:04<00:08,  3.23it/s] 35%|███▌      | 14/40 [00:04<00:08,  3.22it/s] 38%|███▊      | 15/40 [00:04<00:07,  3.23it/s] 40%|████      | 16/40 [00:04<00:07,  3.23it/s] 42%|████▎     | 17/40 [00:05<00:07,  3.23it/s] 45%|████▌     | 18/40 [00:05<00:06,  3.23it/s] 48%|████▊     | 19/40 [00:05<00:06,  3.23it/s] 50%|█████     | 20/40 [00:06<00:06,  3.22it/s] 52%|█████▎    | 21/40 [00:06<00:05,  3.23it/s] 55%|█████▌    | 22/40 [00:06<00:05,  3.23it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.23it/s] 60%|██████    | 24/40 [00:07<00:04,  3.23it/s] 62%|██████▎   | 25/40 [00:07<00:04,  3.23it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.23it/s] 68%|██████▊   | 27/40 [00:08<00:04,  3.23it/s] 70%|███████   | 28/40 [00:08<00:03,  3.22it/s] 72%|███████▎  | 29/40 [00:09<00:03,  3.23it/s] 75%|███████▌  | 30/40 [00:09<00:03,  3.23it/s] 78%|███████▊  | 31/40 [00:09<00:02,  3.23it/s] 80%|████████  | 32/40 [00:09<00:02,  3.23it/s] 82%|████████▎ | 33/40 [00:10<00:02,  3.23it/s] 85%|████████▌ | 34/40 [00:10<00:01,  3.23it/s] 88%|████████▊ | 35/40 [00:10<00:01,  3.23it/s] 90%|█████████ | 36/40 [00:11<00:01,  3.22it/s] 92%|█████████▎| 37/40 [00:11<00:00,  3.23it/s] 95%|█████████▌| 38/40 [00:11<00:00,  3.23it/s] 98%|█████████▊| 39/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.22it/s]
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:12,  3.07it/s]  5%|▌         | 2/40 [00:00<00:12,  3.16it/s]  8%|▊         | 3/40 [00:00<00:11,  3.19it/s] 10%|█         | 4/40 [00:01<00:11,  3.20it/s] 12%|█▎        | 5/40 [00:01<00:10,  3.21it/s] 15%|█▌        | 6/40 [00:01<00:10,  3.21it/s] 18%|█▊        | 7/40 [00:02<00:10,  3.22it/s] 20%|██        | 8/40 [00:02<00:09,  3.22it/s] 22%|██▎       | 9/40 [00:02<00:09,  3.23it/s] 25%|██▌       | 10/40 [00:03<00:09,  3.23it/s] 28%|██▊       | 11/40 [00:03<00:08,  3.23it/s] 30%|███       | 12/40 [00:03<00:08,  3.22it/s] 32%|███▎      | 13/40 [00:04<00:08,  3.23it/s] 35%|███▌      | 14/40 [00:04<00:08,  3.22it/s] 38%|███▊      | 15/40 [00:04<00:07,  3.23it/s] 40%|████      | 16/40 [00:04<00:07,  3.23it/s] 42%|████▎     | 17/40 [00:05<00:07,  3.23it/s] 45%|████▌     | 18/40 [00:05<00:06,  3.23it/s] 48%|████▊     | 19/40 [00:05<00:06,  3.23it/s] 50%|█████     | 20/40 [00:06<00:06,  3.22it/s] 52%|█████▎    | 21/40 [00:06<00:05,  3.22it/s] 55%|█████▌    | 22/40 [00:06<00:05,  3.22it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.22it/s] 60%|██████    | 24/40 [00:07<00:04,  3.21it/s] 62%|██████▎   | 25/40 [00:07<00:04,  3.22it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.22it/s] 68%|██████▊   | 27/40 [00:08<00:04,  3.23it/s] 70%|███████   | 28/40 [00:08<00:03,  3.21it/s] 72%|███████▎  | 29/40 [00:09<00:03,  3.22it/s] 75%|███████▌  | 30/40 [00:09<00:03,  3.22it/s] 78%|███████▊  | 31/40 [00:09<00:02,  3.22it/s] 80%|████████  | 32/40 [00:09<00:02,  3.23it/s] 82%|████████▎ | 33/40 [00:10<00:02,  3.23it/s] 85%|████████▌ | 34/40 [00:10<00:01,  3.23it/s] 88%|████████▊ | 35/40 [00:10<00:01,  3.23it/s] 90%|█████████ | 36/40 [00:11<00:01,  3.23it/s] 92%|█████████▎| 37/40 [00:11<00:00,  3.23it/s] 95%|█████████▌| 38/40 [00:11<00:00,  3.22it/s] 98%|█████████▊| 39/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.22it/s]
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age250_pred_sub0.npy has been deleted successfully.
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age250_pred_sub1.npy has been deleted successfully.
+  Spent 1.1 min for evaluation.
+
+--- Start evaluation ---
+  Target age: 400
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:12,  3.06it/s]  5%|▌         | 2/40 [00:00<00:12,  3.15it/s]  8%|▊         | 3/40 [00:00<00:11,  3.18it/s] 10%|█         | 4/40 [00:01<00:11,  3.19it/s] 12%|█▎        | 5/40 [00:01<00:10,  3.21it/s] 15%|█▌        | 6/40 [00:01<00:10,  3.21it/s] 18%|█▊        | 7/40 [00:02<00:10,  3.22it/s] 20%|██        | 8/40 [00:02<00:09,  3.22it/s] 22%|██▎       | 9/40 [00:02<00:09,  3.23it/s] 25%|██▌       | 10/40 [00:03<00:09,  3.23it/s] 28%|██▊       | 11/40 [00:03<00:08,  3.23it/s] 30%|███       | 12/40 [00:03<00:08,  3.23it/s] 32%|███▎      | 13/40 [00:04<00:08,  3.23it/s] 35%|███▌      | 14/40 [00:04<00:08,  3.23it/s] 38%|███▊      | 15/40 [00:04<00:07,  3.23it/s] 40%|████      | 16/40 [00:04<00:07,  3.23it/s] 42%|████▎     | 17/40 [00:05<00:07,  3.23it/s] 45%|████▌     | 18/40 [00:05<00:06,  3.23it/s] 48%|████▊     | 19/40 [00:05<00:06,  3.23it/s] 50%|█████     | 20/40 [00:06<00:06,  3.22it/s] 52%|█████▎    | 21/40 [00:06<00:05,  3.23it/s] 55%|█████▌    | 22/40 [00:06<00:05,  3.23it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.23it/s] 60%|██████    | 24/40 [00:07<00:04,  3.23it/s] 62%|██████▎   | 25/40 [00:07<00:04,  3.23it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.23it/s] 68%|██████▊   | 27/40 [00:08<00:04,  3.24it/s] 70%|███████   | 28/40 [00:08<00:03,  3.23it/s] 72%|███████▎  | 29/40 [00:09<00:03,  3.23it/s] 75%|███████▌  | 30/40 [00:09<00:03,  3.23it/s] 78%|███████▊  | 31/40 [00:09<00:02,  3.23it/s] 80%|████████  | 32/40 [00:09<00:02,  3.23it/s] 82%|████████▎ | 33/40 [00:10<00:02,  3.23it/s] 85%|████████▌ | 34/40 [00:10<00:01,  3.23it/s] 88%|████████▊ | 35/40 [00:10<00:01,  3.23it/s] 90%|█████████ | 36/40 [00:11<00:01,  3.23it/s] 92%|█████████▎| 37/40 [00:11<00:00,  3.23it/s] 95%|█████████▌| 38/40 [00:11<00:00,  3.23it/s] 98%|█████████▊| 39/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.22it/s]
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:12,  3.05it/s]  5%|▌         | 2/40 [00:00<00:12,  3.14it/s]  8%|▊         | 3/40 [00:00<00:11,  3.18it/s] 10%|█         | 4/40 [00:01<00:11,  3.19it/s] 12%|█▎        | 5/40 [00:01<00:10,  3.20it/s] 15%|█▌        | 6/40 [00:01<00:10,  3.21it/s] 18%|█▊        | 7/40 [00:02<00:10,  3.22it/s] 20%|██        | 8/40 [00:02<00:09,  3.22it/s] 22%|██▎       | 9/40 [00:02<00:09,  3.23it/s] 25%|██▌       | 10/40 [00:03<00:09,  3.23it/s] 28%|██▊       | 11/40 [00:03<00:08,  3.23it/s] 30%|███       | 12/40 [00:03<00:08,  3.21it/s] 32%|███▎      | 13/40 [00:04<00:08,  3.22it/s] 35%|███▌      | 14/40 [00:04<00:08,  3.22it/s] 38%|███▊      | 15/40 [00:04<00:07,  3.22it/s] 40%|████      | 16/40 [00:04<00:07,  3.23it/s] 42%|████▎     | 17/40 [00:05<00:07,  3.23it/s] 45%|████▌     | 18/40 [00:05<00:06,  3.23it/s] 48%|████▊     | 19/40 [00:05<00:06,  3.23it/s] 50%|█████     | 20/40 [00:06<00:06,  3.22it/s] 52%|█████▎    | 21/40 [00:06<00:05,  3.23it/s] 55%|█████▌    | 22/40 [00:06<00:05,  3.22it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.22it/s] 60%|██████    | 24/40 [00:07<00:04,  3.23it/s] 62%|██████▎   | 25/40 [00:07<00:04,  3.23it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.23it/s] 68%|██████▊   | 27/40 [00:08<00:04,  3.23it/s] 70%|███████   | 28/40 [00:08<00:03,  3.22it/s] 72%|███████▎  | 29/40 [00:09<00:03,  3.22it/s] 75%|███████▌  | 30/40 [00:09<00:03,  3.21it/s] 78%|███████▊  | 31/40 [00:09<00:02,  3.22it/s] 80%|████████  | 32/40 [00:09<00:02,  3.23it/s] 82%|████████▎ | 33/40 [00:10<00:02,  3.23it/s] 85%|████████▌ | 34/40 [00:10<00:01,  3.23it/s] 88%|████████▊ | 35/40 [00:10<00:01,  3.23it/s] 90%|█████████ | 36/40 [00:11<00:01,  3.23it/s] 92%|█████████▎| 37/40 [00:11<00:00,  3.23it/s] 95%|█████████▌| 38/40 [00:11<00:00,  3.23it/s] 98%|█████████▊| 39/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.22it/s]
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age400_pred_sub0.npy has been deleted successfully.
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age400_pred_sub1.npy has been deleted successfully.
+  Spent 1.2 min for evaluation.
+
+--- Start evaluation ---
+  Target age: 500
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:12,  3.05it/s]  5%|▌         | 2/40 [00:00<00:12,  3.15it/s]  8%|▊         | 3/40 [00:00<00:11,  3.19it/s] 10%|█         | 4/40 [00:01<00:11,  3.19it/s] 12%|█▎        | 5/40 [00:01<00:10,  3.20it/s] 15%|█▌        | 6/40 [00:01<00:10,  3.21it/s] 18%|█▊        | 7/40 [00:02<00:10,  3.22it/s] 20%|██        | 8/40 [00:02<00:09,  3.22it/s] 22%|██▎       | 9/40 [00:02<00:09,  3.22it/s] 25%|██▌       | 10/40 [00:03<00:09,  3.23it/s] 28%|██▊       | 11/40 [00:03<00:08,  3.23it/s] 30%|███       | 12/40 [00:03<00:08,  3.21it/s] 32%|███▎      | 13/40 [00:04<00:08,  3.21it/s] 35%|███▌      | 14/40 [00:04<00:08,  3.22it/s] 38%|███▊      | 15/40 [00:04<00:07,  3.22it/s] 40%|████      | 16/40 [00:04<00:07,  3.22it/s] 42%|████▎     | 17/40 [00:05<00:07,  3.22it/s] 45%|████▌     | 18/40 [00:05<00:06,  3.23it/s] 48%|████▊     | 19/40 [00:05<00:06,  3.23it/s] 50%|█████     | 20/40 [00:06<00:06,  3.22it/s] 52%|█████▎    | 21/40 [00:06<00:05,  3.22it/s] 55%|█████▌    | 22/40 [00:06<00:05,  3.22it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.23it/s] 60%|██████    | 24/40 [00:07<00:04,  3.23it/s] 62%|██████▎   | 25/40 [00:07<00:04,  3.23it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.23it/s] 68%|██████▊   | 27/40 [00:08<00:04,  3.24it/s] 70%|███████   | 28/40 [00:08<00:03,  3.23it/s] 72%|███████▎  | 29/40 [00:09<00:03,  3.23it/s] 75%|███████▌  | 30/40 [00:09<00:03,  3.23it/s] 78%|███████▊  | 31/40 [00:09<00:02,  3.23it/s] 80%|████████  | 32/40 [00:09<00:02,  3.23it/s] 82%|████████▎ | 33/40 [00:10<00:02,  3.23it/s] 85%|████████▌ | 34/40 [00:10<00:01,  3.23it/s] 88%|████████▊ | 35/40 [00:10<00:01,  3.23it/s] 90%|█████████ | 36/40 [00:11<00:01,  3.23it/s] 92%|█████████▎| 37/40 [00:11<00:00,  3.23it/s] 95%|█████████▌| 38/40 [00:11<00:00,  3.23it/s] 98%|█████████▊| 39/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.22it/s]
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:12,  3.14it/s]  5%|▌         | 2/40 [00:00<00:11,  3.19it/s]  8%|▊         | 3/40 [00:00<00:11,  3.21it/s] 10%|█         | 4/40 [00:01<00:11,  3.21it/s] 12%|█▎        | 5/40 [00:01<00:10,  3.22it/s] 15%|█▌        | 6/40 [00:01<00:10,  3.22it/s] 18%|█▊        | 7/40 [00:02<00:10,  3.22it/s] 20%|██        | 8/40 [00:02<00:09,  3.22it/s] 22%|██▎       | 9/40 [00:02<00:09,  3.22it/s] 25%|██▌       | 10/40 [00:03<00:09,  3.23it/s] 28%|██▊       | 11/40 [00:03<00:08,  3.23it/s] 30%|███       | 12/40 [00:03<00:08,  3.22it/s] 32%|███▎      | 13/40 [00:04<00:08,  3.22it/s] 35%|███▌      | 14/40 [00:04<00:08,  3.22it/s] 38%|███▊      | 15/40 [00:04<00:07,  3.22it/s] 40%|████      | 16/40 [00:04<00:07,  3.23it/s] 42%|████▎     | 17/40 [00:05<00:07,  3.23it/s] 45%|████▌     | 18/40 [00:05<00:06,  3.23it/s] 48%|████▊     | 19/40 [00:05<00:06,  3.22it/s] 50%|█████     | 20/40 [00:06<00:06,  3.21it/s] 52%|█████▎    | 21/40 [00:06<00:05,  3.22it/s] 55%|█████▌    | 22/40 [00:06<00:05,  3.22it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.22it/s] 60%|██████    | 24/40 [00:07<00:04,  3.23it/s] 62%|██████▎   | 25/40 [00:07<00:04,  3.23it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.23it/s] 68%|██████▊   | 27/40 [00:08<00:04,  3.23it/s] 70%|███████   | 28/40 [00:08<00:03,  3.22it/s] 72%|███████▎  | 29/40 [00:09<00:03,  3.23it/s] 75%|███████▌  | 30/40 [00:09<00:03,  3.23it/s] 78%|███████▊  | 31/40 [00:09<00:02,  3.23it/s] 80%|████████  | 32/40 [00:09<00:02,  3.23it/s] 82%|████████▎ | 33/40 [00:10<00:02,  3.23it/s] 85%|████████▌ | 34/40 [00:10<00:01,  3.23it/s] 88%|████████▊ | 35/40 [00:10<00:01,  3.23it/s] 90%|█████████ | 36/40 [00:11<00:01,  3.22it/s] 92%|█████████▎| 37/40 [00:11<00:00,  3.23it/s] 95%|█████████▌| 38/40 [00:11<00:00,  3.22it/s] 98%|█████████▊| 39/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.22it/s]
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age500_pred_sub0.npy has been deleted successfully.
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age500_pred_sub1.npy has been deleted successfully.
+  Spent 1.1 min for evaluation.
+
+--- Start evaluation ---
+  Target age: 100
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:12,  3.05it/s]  5%|▌         | 2/40 [00:00<00:12,  3.15it/s]  8%|▊         | 3/40 [00:00<00:11,  3.18it/s] 10%|█         | 4/40 [00:01<00:11,  3.18it/s] 12%|█▎        | 5/40 [00:01<00:10,  3.20it/s] 15%|█▌        | 6/40 [00:01<00:10,  3.20it/s] 18%|█▊        | 7/40 [00:02<00:10,  3.21it/s] 20%|██        | 8/40 [00:02<00:09,  3.22it/s] 22%|██▎       | 9/40 [00:02<00:09,  3.22it/s] 25%|██▌       | 10/40 [00:03<00:09,  3.23it/s] 28%|██▊       | 11/40 [00:03<00:08,  3.23it/s] 30%|███       | 12/40 [00:03<00:08,  3.22it/s] 32%|███▎      | 13/40 [00:04<00:08,  3.22it/s] 35%|███▌      | 14/40 [00:04<00:08,  3.22it/s] 38%|███▊      | 15/40 [00:04<00:07,  3.22it/s] 40%|████      | 16/40 [00:04<00:07,  3.23it/s] 42%|████▎     | 17/40 [00:05<00:07,  3.23it/s] 45%|████▌     | 18/40 [00:05<00:06,  3.23it/s] 48%|████▊     | 19/40 [00:05<00:06,  3.23it/s] 50%|█████     | 20/40 [00:06<00:06,  3.22it/s] 52%|█████▎    | 21/40 [00:06<00:05,  3.22it/s] 55%|█████▌    | 22/40 [00:06<00:05,  3.22it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.22it/s] 60%|██████    | 24/40 [00:07<00:04,  3.22it/s] 62%|██████▎   | 25/40 [00:07<00:04,  3.23it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.22it/s] 68%|██████▊   | 27/40 [00:08<00:04,  3.22it/s] 70%|███████   | 28/40 [00:08<00:03,  3.22it/s] 72%|███████▎  | 29/40 [00:09<00:03,  3.22it/s] 75%|███████▌  | 30/40 [00:09<00:03,  3.22it/s] 78%|███████▊  | 31/40 [00:09<00:02,  3.22it/s] 80%|████████  | 32/40 [00:09<00:02,  3.23it/s] 82%|████████▎ | 33/40 [00:10<00:02,  3.23it/s] 85%|████████▌ | 34/40 [00:10<00:01,  3.23it/s] 88%|████████▊ | 35/40 [00:10<00:01,  3.23it/s] 90%|█████████ | 36/40 [00:11<00:01,  3.22it/s] 92%|█████████▎| 37/40 [00:11<00:00,  3.22it/s] 95%|█████████▌| 38/40 [00:11<00:00,  3.22it/s] 98%|█████████▊| 39/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.22it/s]
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:12,  3.06it/s]  5%|▌         | 2/40 [00:00<00:12,  3.15it/s]  8%|▊         | 3/40 [00:00<00:11,  3.19it/s] 10%|█         | 4/40 [00:01<00:11,  3.20it/s] 12%|█▎        | 5/40 [00:01<00:10,  3.21it/s] 15%|█▌        | 6/40 [00:01<00:10,  3.22it/s] 18%|█▊        | 7/40 [00:02<00:10,  3.22it/s] 20%|██        | 8/40 [00:02<00:09,  3.22it/s] 22%|██▎       | 9/40 [00:02<00:09,  3.22it/s] 25%|██▌       | 10/40 [00:03<00:09,  3.21it/s] 28%|██▊       | 11/40 [00:03<00:09,  3.22it/s] 30%|███       | 12/40 [00:03<00:08,  3.21it/s] 32%|███▎      | 13/40 [00:04<00:08,  3.22it/s] 35%|███▌      | 14/40 [00:04<00:08,  3.22it/s] 38%|███▊      | 15/40 [00:04<00:07,  3.23it/s] 40%|████      | 16/40 [00:04<00:07,  3.23it/s] 42%|████▎     | 17/40 [00:05<00:07,  3.23it/s] 45%|████▌     | 18/40 [00:05<00:06,  3.23it/s] 48%|████▊     | 19/40 [00:05<00:06,  3.23it/s] 50%|█████     | 20/40 [00:06<00:06,  3.22it/s] 52%|█████▎    | 21/40 [00:06<00:05,  3.22it/s] 55%|█████▌    | 22/40 [00:06<00:05,  3.22it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.22it/s] 60%|██████    | 24/40 [00:07<00:04,  3.22it/s] 62%|██████▎   | 25/40 [00:07<00:04,  3.22it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.13it/s] 68%|██████▊   | 27/40 [00:08<00:04,  3.16it/s] 70%|███████   | 28/40 [00:08<00:03,  3.17it/s] 72%|███████▎  | 29/40 [00:09<00:03,  3.19it/s] 75%|███████▌  | 30/40 [00:09<00:03,  3.20it/s] 78%|███████▊  | 31/40 [00:09<00:02,  3.21it/s] 80%|████████  | 32/40 [00:09<00:02,  3.21it/s] 82%|████████▎ | 33/40 [00:10<00:02,  3.22it/s] 85%|████████▌ | 34/40 [00:10<00:01,  3.22it/s] 88%|████████▊ | 35/40 [00:10<00:01,  3.22it/s] 90%|█████████ | 36/40 [00:11<00:01,  3.21it/s] 92%|█████████▎| 37/40 [00:11<00:00,  3.22it/s] 95%|█████████▌| 38/40 [00:11<00:00,  3.22it/s] 98%|█████████▊| 39/40 [00:12<00:00,  3.22it/s]100%|██████████| 40/40 [00:12<00:00,  3.22it/s]100%|██████████| 40/40 [00:12<00:00,  3.21it/s]
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age100_pred_sub0.npy has been deleted successfully.
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age100_pred_sub1.npy has been deleted successfully.
+  Spent 1.2 min for evaluation.
+
+--- Start evaluation ---
+  Target age: 001
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:12,  3.05it/s]  5%|▌         | 2/40 [00:00<00:12,  3.16it/s]  8%|▊         | 3/40 [00:00<00:11,  3.19it/s] 10%|█         | 4/40 [00:01<00:11,  3.20it/s] 12%|█▎        | 5/40 [00:01<00:10,  3.21it/s] 15%|█▌        | 6/40 [00:01<00:10,  3.22it/s] 18%|█▊        | 7/40 [00:02<00:10,  3.22it/s] 20%|██        | 8/40 [00:02<00:09,  3.22it/s] 22%|██▎       | 9/40 [00:02<00:09,  3.23it/s] 25%|██▌       | 10/40 [00:03<00:09,  3.23it/s] 28%|██▊       | 11/40 [00:03<00:08,  3.23it/s] 30%|███       | 12/40 [00:03<00:08,  3.22it/s] 32%|███▎      | 13/40 [00:04<00:08,  3.22it/s] 35%|███▌      | 14/40 [00:04<00:08,  3.22it/s] 38%|███▊      | 15/40 [00:04<00:07,  3.22it/s] 40%|████      | 16/40 [00:04<00:07,  3.22it/s] 42%|████▎     | 17/40 [00:05<00:07,  3.22it/s] 45%|████▌     | 18/40 [00:05<00:06,  3.23it/s] 48%|████▊     | 19/40 [00:05<00:06,  3.23it/s] 50%|█████     | 20/40 [00:06<00:06,  3.22it/s] 52%|█████▎    | 21/40 [00:06<00:05,  3.22it/s] 55%|█████▌    | 22/40 [00:06<00:05,  3.23it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.23it/s] 60%|██████    | 24/40 [00:07<00:04,  3.23it/s] 62%|██████▎   | 25/40 [00:07<00:04,  3.23it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.23it/s] 68%|██████▊   | 27/40 [00:08<00:04,  3.23it/s] 70%|███████   | 28/40 [00:08<00:03,  3.22it/s] 72%|███████▎  | 29/40 [00:09<00:03,  3.22it/s] 75%|███████▌  | 30/40 [00:09<00:03,  3.22it/s] 78%|███████▊  | 31/40 [00:09<00:02,  3.22it/s] 80%|████████  | 32/40 [00:09<00:02,  3.23it/s] 82%|████████▎ | 33/40 [00:10<00:02,  3.23it/s] 85%|████████▌ | 34/40 [00:10<00:01,  3.23it/s] 88%|████████▊ | 35/40 [00:10<00:01,  3.23it/s] 90%|█████████ | 36/40 [00:11<00:01,  3.23it/s] 92%|█████████▎| 37/40 [00:11<00:00,  3.23it/s] 95%|█████████▌| 38/40 [00:11<00:00,  3.23it/s] 98%|█████████▊| 39/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.23it/s]100%|██████████| 40/40 [00:12<00:00,  3.22it/s]
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:00<00:12,  3.06it/s]  5%|▌         | 2/40 [00:00<00:12,  3.15it/s]  8%|▊         | 3/40 [00:00<00:11,  3.19it/s] 10%|█         | 4/40 [00:01<00:11,  3.16it/s] 12%|█▎        | 5/40 [00:01<00:10,  3.18it/s] 15%|█▌        | 6/40 [00:01<00:10,  3.20it/s] 18%|█▊        | 7/40 [00:02<00:10,  3.21it/s] 20%|██        | 8/40 [00:02<00:09,  3.22it/s] 22%|██▎       | 9/40 [00:02<00:09,  3.22it/s] 25%|██▌       | 10/40 [00:03<00:09,  3.21it/s] 28%|██▊       | 11/40 [00:03<00:09,  3.22it/s] 30%|███       | 12/40 [00:03<00:08,  3.21it/s] 32%|███▎      | 13/40 [00:04<00:08,  3.21it/s] 35%|███▌      | 14/40 [00:04<00:08,  3.21it/s] 38%|███▊      | 15/40 [00:04<00:07,  3.21it/s] 40%|████      | 16/40 [00:04<00:07,  3.22it/s] 42%|████▎     | 17/40 [00:05<00:07,  3.22it/s] 45%|████▌     | 18/40 [00:05<00:06,  3.22it/s] 48%|████▊     | 19/40 [00:05<00:06,  3.23it/s] 50%|█████     | 20/40 [00:06<00:06,  3.22it/s] 52%|█████▎    | 21/40 [00:06<00:05,  3.22it/s] 55%|█████▌    | 22/40 [00:06<00:05,  3.22it/s] 57%|█████▊    | 23/40 [00:07<00:05,  3.22it/s] 60%|██████    | 24/40 [00:07<00:04,  3.23it/s] 62%|██████▎   | 25/40 [00:07<00:04,  3.23it/s] 65%|██████▌   | 26/40 [00:08<00:04,  3.22it/s] 68%|██████▊   | 27/40 [00:08<00:04,  3.22it/s] 70%|███████   | 28/40 [00:08<00:03,  3.21it/s] 72%|███████▎  | 29/40 [00:09<00:03,  3.21it/s] 75%|███████▌  | 30/40 [00:09<00:03,  3.22it/s] 78%|███████▊  | 31/40 [00:09<00:02,  3.22it/s] 80%|████████  | 32/40 [00:09<00:02,  3.22it/s] 82%|████████▎ | 33/40 [00:10<00:02,  3.20it/s] 85%|████████▌ | 34/40 [00:10<00:01,  3.21it/s] 88%|████████▊ | 35/40 [00:10<00:01,  3.21it/s] 90%|█████████ | 36/40 [00:11<00:01,  3.20it/s] 92%|█████████▎| 37/40 [00:11<00:00,  3.21it/s] 95%|█████████▌| 38/40 [00:11<00:00,  3.21it/s] 98%|█████████▊| 39/40 [00:12<00:00,  3.21it/s]100%|██████████| 40/40 [00:12<00:00,  3.21it/s]100%|██████████| 40/40 [00:12<00:00,  3.21it/s]
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age001_pred_sub0.npy has been deleted successfully.
+	File ./results/informer_noT_deeped_ftM_sl12_ll1_pl1_asi0_aei15_dm512_nh8_el2_dl1_df2048_atfull_fc5_ebtimeF_dtTrue_mxTrue_exp_10_noise0/_glob/age001_pred_sub1.npy has been deleted successfully.
+  Spent 1.1 min for evaluation.
+
+Length of true and pred: 15, 15
+0it [00:00, ?it/s]1it [00:00,  1.99it/s]2it [00:01,  1.64it/s]3it [00:01,  1.57it/s]4it [00:02,  1.39it/s]5it [00:03,  1.10it/s]6it [00:04,  1.21it/s]7it [00:05,  1.33it/s]8it [00:06,  1.30it/s]9it [00:06,  1.37it/s]10it [00:07,  1.39it/s]11it [00:08,  1.22it/s]12it [00:09,  1.31it/s]13it [00:09,  1.39it/s]14it [00:10,  1.43it/s]15it [00:11,  1.43it/s]15it [00:11,  1.36it/s]
+           Type  Target  Age       MAE       MSE      RMSE        R²
+0        Global  height  NaN  1.817884  8.895236  2.961862  0.916529
+1        Global     agb  NaN  0.690491  1.683600  1.258380  0.933685
+2        Global    soil  NaN  1.192894  3.485789  1.802477  0.890540
+3        Global     lai  NaN  0.256065  0.217203  0.454186  0.944774
+4        Global     gpp  NaN  0.092741  0.054876  0.217207  0.969763
+..          ...     ...  ...       ...       ...       ...       ...
+107  Individual    soil  500  1.747335  6.824153  2.612308  0.863186
+108  Individual     lai  500  0.301128  0.236007  0.485805  0.941858
+109  Individual     gpp  500  0.086130  0.031899  0.178603  0.981426
+110  Individual     npp  500  0.041931  0.007888  0.088813  0.980259
+111  Individual      rh  500  0.064214  0.015766  0.125564  0.962876
+
+[112 rows x 7 columns]
