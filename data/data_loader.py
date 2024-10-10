@@ -13,6 +13,205 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
+
+class Dataset_DeepED_Climate(Dataset):
+    def __init__(self, root_path, flag='train', size=None, features='S', 
+                 esm = 'GFDL_ESM4', ssp = '585', asi=0, aei=3, 
+                 val_ratio=0.1, add_noise=False, noise_std=1e-4,
+                 target='OT', scale=True, inverse=False, timeenc=0, freq='h', cols=None):
+        # size [seq_len, label_len, pred_len]
+        # info
+        if size == None:
+            self.seq_len = 24*4*4
+            self.label_len = 24*4
+            self.pred_len = 24*4
+        else:
+            self.seq_len = size[0]
+            self.label_len = size[1]
+            self.pred_len = size[2]
+        # init
+        assert flag in ['train', 'test', 'val', 'pred']
+        if flag == 'pred':
+            flag = 'test'
+        self.flag = flag
+        type_map = {'train':0, 'val':1, 'test':2}
+        self.set_type = type_map[flag]
+
+        self.root_path = root_path
+        self.esm = esm
+        self.ssp = ssp
+        self.asi = asi
+        self.aei = aei
+        self.age_list = [0, 100, 500]
+        self.val_ratio = val_ratio
+        self.add_noise = add_noise
+        self.noise_std = noise_std
+         
+        self.features = features
+        self.target = target
+        self.scale = scale
+        self.inverse = inverse
+        self.timeenc = timeenc
+        self.freq = freq
+        self.cols=cols
+        
+        self.__read_data__()
+
+    def __read_data__(self):
+        stat_raw = np.load(os.path.join(self.root_path, f'ED_{self.esm}.npy'))
+        self.y_mean = stat_raw[0]
+        self.y_std = stat_raw[1]
+        
+        tri_age = []
+        tri_mean = []
+        tri_slope = []
+        for i in range(self.asi, self.aei):
+            cur_age = self.age_list[i]
+            tmp = np.load(os.path.join(self.root_path, f'agetri_{self.esm}_age{str(cur_age).zfill(3)}.npz'))
+            
+            tri_age.append(cur_age)
+            tri_mean.append(tmp['age_mean'])
+            tri_slope.append(tmp['age_slope'])
+        self.tri_age = np.array(tri_age)
+        self.tri_mean = np.array(tri_mean)
+        self.tri_slope = np.array(tri_slope)
+        print(f'Age triplet age={self.tri_age}, mean={self.tri_mean.shape}, slope={self.tri_slope.shape}')
+        
+        
+        data_x = np.load(os.path.join(self.root_path,f'{self.esm}_ssp{self.ssp}_{self.flag}_driver.npy'))
+        data_x = data_x[:,1:]
+        print(f'Raw {self.flag} data size x={data_x.shape}') # (n, 80, 12, 136)
+        
+        data_y = []
+        for i in range(self.asi, self.aei):
+            cur_age = self.age_list[i]
+            tmp = np.load(os.path.join(self.root_path, f'{self.esm}_ssp{self.ssp}_age{str(cur_age).zfill(3)}_{self.flag}_ed.npy'))
+            data_y.append(tmp)
+        data_y = np.array(data_y)
+        print(f'Raw {self.flag} data size y={data_y.shape}') # (3, n, 81, 7)
+        
+        
+        # preprocessing
+        data_y = self.__norm_data__(data_y, self.y_mean, self.y_std)
+        self.tri_mean = self.__norm_data__(self.tri_mean, self.y_mean, self.y_std)
+        self.tri_slope = self.__norm_data__(self.tri_slope, self.y_mean, self.y_std)
+        
+        data_x = np.repeat(data_x[np.newaxis], data_y.shape[0], axis=0) # (3, n, 80, 12, 136)
+        data_y = np.repeat(data_y[:, :, :, np.newaxis], data_x.shape[3], axis=3) # (3, n, 81, 12, 7)
+        data_x = np.transpose(data_x, (1,0,2,3,4)) # (n, 3, 80, 12, 136)
+        data_y = np.transpose(data_y, (1,0,2,3,4)) # (n, 3, 81, 12, 7)
+        
+        
+        '''
+        No need to shift the time window in this case 
+        Given X_2100, we want to predict Y_2100, rathen than Y_2099 (lstm case)
+        '''
+        data_all = np.concatenate([data_x, data_y[:,:,1:]], axis=-1) # (n, 3, 80, 12, 143)
+        
+        
+        data_all = self.addAgeTriplet_perAge(data_all, self.tri_age, self.tri_mean, self.tri_slope, data_all.shape[2])
+        
+        
+        self.data_x = data_all[:,:,:40]
+        self.data_y = data_all[:,:,40:]
+        self.data_x = self.data_x.reshape(self.data_x.shape[0], self.data_x.shape[1], 480, self.data_x.shape[4])
+        self.data_y = self.data_y.reshape(self.data_x.shape[0], self.data_y.shape[1], 480, self.data_y.shape[4])
+        
+        print(f'Final {self.flag} data size x={self.data_x.shape}, y={self.data_y.shape}')
+        
+        
+
+    def __getitem__(self, index):
+        seq_x = self.data_x[index]
+        seq_y = self.data_y[index]
+    
+        return seq_x, seq_y
+    
+    def __len__(self):
+        return self.data_x.shape[0]
+    
+    def __sliding_window__(self, arr, window_size, stride, axis):
+        # Ensure the axis is positive and within the valid range
+        axis = axis if axis >= 0 else arr.ndim + axis
+        if axis < 0 or axis >= arr.ndim:
+            raise ValueError("Axis out of bounds")
+
+        # Calculate the shape and strides for the sliding window
+        new_shape = list(arr.shape)
+        new_shape[axis] = (arr.shape[axis] - window_size) // stride + 1
+        new_shape.insert(axis + 1, window_size)
+        
+        new_strides = list(arr.strides)
+        new_strides.insert(axis + 1, new_strides[axis])
+        new_strides[axis] = new_strides[axis] * stride
+
+        # Create the sliding window view
+        return np.lib.stride_tricks.as_strided(arr, shape=tuple(new_shape), strides=tuple(new_strides))
+    
+    def __generate_random_walk_noise__(self, shape, std):
+        random_steps = np.random.normal(loc=0.0, scale=std, size=shape)
+        random_walk_noise = np.cumsum(random_steps, axis=2)  # Axis 2 corresponds to the "40" dimension
+        return random_walk_noise
+    
+    # Function to add random walk noise to the specified feature channels
+    def __add_random_walk_noise_to_batch__(self, batch, std):
+        N, age, years, channels, features = batch.shape
+
+        # Generate random walk noise for the specified channels
+        noise_shape = (N, age, years, features)
+        random_walk_noise = self.__generate_random_walk_noise__(noise_shape, std)
+
+        # Create a zero tensor with the same shape as the batch
+        noise_tensor = np.zeros_like(batch)
+        
+        # Add the random walk noise to the [:, :, :, 0, :] slice
+        noise_tensor[:, :, :, 0, :] = random_walk_noise
+        
+        # Add the noise tensor to the batch
+        batch_with_noise = batch + noise_tensor
+        
+        return batch_with_noise
+    
+    def addAgeTriplet_perAge(self, x, np_age, np_mean, np_slope, n_year):
+        ''' 
+        For x with all ages, add age triplet to the last dimension of x
+            x: [N_Sample, N_age, N_YEAR, N_T, N_BAND] # (n, 3, 80, 12, 143)
+            np_age: [1]
+            np_mean/np_slope: [N_age, N_YEAR, N_BAND]
+        '''
+        # form data structure
+        res_mean = np.repeat(np_mean[:,:,np.newaxis], x.shape[3], axis=2)
+        res_mean = np.repeat(res_mean[np.newaxis], x.shape[0], axis=0)
+        res_slope = np.repeat(np_slope[:,:,np.newaxis], x.shape[3], axis=2)
+        res_slope = np.repeat(res_slope[np.newaxis], x.shape[0], axis=0)
+        
+        res_age = np.arange(n_year)[np.newaxis] + np.repeat(np_age[:,np.newaxis], n_year, axis=1)
+        res_age = np.repeat(res_age[...,np.newaxis], x.shape[3], axis=-1)
+        res_age = np.repeat(res_age[np.newaxis], x.shape[0], axis=0)
+        res_age = np.expand_dims(res_age, axis=-1)
+        
+        # scale age
+        res_age = res_age / 600.
+
+        # concat
+        res = np.concatenate([x, res_age.astype(np.float32)], axis=-1)
+        res = np.concatenate([res, res_mean.astype(np.float32)], axis=-1)
+        res = np.concatenate([res, res_slope.astype(np.float32)], axis=-1)
+        
+        return res
+    
+    def __norm_data__(self, data, mean, std):
+        return (data-mean)/(std+1e-10)
+    
+    def __inverse_norm_data__(self, data, mean, std):
+        return data*(std+1e-10) + mean
+
+    def inverse_transform(self, data):
+        return self.scaler.inverse_transform(data)
+
+
+
+
 class Dataset_DeepED(Dataset):
     def __init__(self, root_path, flag='train', size=None, 
                  features='S', data_path='data_train.npz', stat_path='stat.npz',
